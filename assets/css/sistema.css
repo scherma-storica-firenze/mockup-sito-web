@@ -372,7 +372,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
   .ssf-numeri__elenco > div + div { border-left: 1px solid var(--ssf-border-default); } }
 .ssf-numeri__elenco > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: var(--ssf-space-4); }
 .ssf-numeri__elenco dd { margin: 0; font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h2);
-  font-weight: var(--ssf-fw-semibold); line-height: 1; color: var(--ssf-text-heading); }
+  font-weight: var(--ssf-fw-semibold); line-height: 1; color: var(--ssf-text-accent); }   /* oro: utente, U12 */
 .ssf-numeri__elenco dt { font-size: var(--ssf-fs-body-s); line-height: var(--ssf-lh-body-s);
   color: var(--ssf-text-secondary); }
 
