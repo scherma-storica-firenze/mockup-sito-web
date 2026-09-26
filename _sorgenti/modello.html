@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mockup · %%TITOLO%% · Scherma Storica Firenze</title>
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/sistema.css">
+<link rel="stylesheet" href="assets/css/mockup.css">
+</head>
+<body>
+<svg style="display:none" aria-hidden="true">%%GIGLIO%%</svg>
+
+<p class="mockup-fascia"><strong>Mockup</strong> · non è il sito ufficiale di Scherma Storica Firenze · testi e foto sono segnaposto</p>
+
+<nav class="ssf-nav" aria-label="Principale">
+  <a class="ssf-nav__logo" href="index.html"><img src="assets/img/logo-ssf.png" alt="Scherma Storica Firenze, torna alla home" width="93" height="32"></a>
+  <div class="ssf-nav__voci">
+%%VOCI%%
+  </div>
+  <details class="ssf-nav__menu">
+    <summary aria-label="Apri il menu">{{icona:menu}}</summary>
+    <div>
+%%VOCI%%
+    </div>
+  </details>
+  <a class="ssf-btn ssf-btn--secondary" href="contatti.html"><span class="solo-stretto">Prenota</span><span class="solo-largo">Prenota i tre allenamenti gratuiti</span></a>
+</nav>
+
+<main>
+%%CONTENUTO%%
+</main>
+
+<footer class="ssf-footer">
+  <div class="ssf-container">
+    <div class="ssf-footer__blocchi">
+      <div>
+        <h2>Dove siamo</h2>
+        <p class="ph-testo">[Indirizzo della palestra]</p>
+        <p class="ph-testo">[Sere di allenamento · dalle 21 alle 23]</p>
+        <p class="ph-testo">[Email · telefono · WhatsApp]</p>
+        <a class="ssf-footer__voce" href="contatti.html#dove">Come arrivare</a>
+        <p class="ph-testo">[Instagram · Facebook · YouTube — quali, da confermare]</p>
+      </div>
+      <div>
+        <h2>Il sito</h2>
+        <div class="ssf-footer__elenco">
+          <a class="ssf-footer__voce" href="corsi.html">Corsi</a>
+          <a class="ssf-footer__voce" href="corsi.html#costi">Quanto costa</a>
+          <a class="ssf-footer__voce" href="chi-siamo.html">Chi siamo</a>
+          <a class="ssf-footer__voce" href="eventi.html">Eventi</a>
+          <a class="ssf-footer__voce" href="foto-e-video.html">Foto e video</a>
+          <a class="ssf-footer__voce" href="blog.html">Blog</a>
+          <a class="ssf-footer__voce" href="sponsor.html">Sponsor</a>
+          <a class="ssf-footer__voce" href="contatti.html">Contatti</a>
+        </div>
+      </div>
+      <div>
+        <h2>Newsletter</h2>
+        <div class="ssf-newsletter">
+          <p class="ph-testo">[Cosa arriva e ogni quanto: i post dei social e gli annunci, senza cadenza fissa]</p>
+          <label class="ssf-caption" for="nl-email">Email</label>
+          <div class="ssf-newsletter__riga">
+            <input class="ssf-input" id="nl-email" type="email" autocomplete="email">
+            <button class="ssf-btn ssf-btn--secondary" type="button">Iscriviti</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ssf-footer__coda">
+      <span>© [anno] A.S.D. Scherma Storica Firenze</span>
+      <span>C.F. [codice fiscale]</span>
+      <a class="ssf-footer__voce ph-finto" title="Documento esterno: nel mockup non si apre">Informativa privacy</a>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="ssf-wa" aria-label="Scrivici su WhatsApp (nel mockup non si apre)" title="Nel sito vero apre la chat su WhatsApp. Nel mockup non si apre">{{icona:whatsapp}}</button>
+</body>
+</html>

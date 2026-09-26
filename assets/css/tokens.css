@@ -1,0 +1,413 @@
+/* ============================================================
+   SSF — Scherma Storica Firenze
+   Design Tokens v1.1 — [4.1] 18/08/2026 · motion [4.5] 21/08/2026
+   Sorgenti: [3.2] Color Palette v2.0 · [3.3] Sistema Tipografico
+             [3.4] Iconografia · [3.5] Grafica di Supporto
+   Regola: nei componenti si usano SOLO i token semantici.
+           I primitivi (--ssf-color-*) non si scrivono mai
+           direttamente in un foglio di stile.
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+
+  /* --- 1. PRIMITIVI — COLORE ------------------------------- */
+  --ssf-color-black:        #0A0A0A;
+  --ssf-color-silver:       #BEBEBE;
+  --ssf-color-silver-light: #C4C4C4;
+  --ssf-color-anthracite:   #3D3D3D;
+  --ssf-color-graphite:     #5A5A5A;
+  --ssf-color-white:        #FFFFFF;
+  --ssf-color-gold:         #C9A84C;
+  --ssf-color-gold-light:   #DFC270;
+  --ssf-color-gold-dark:    #A07830;
+
+  --ssf-color-gray-50:  #F2F2F2;
+  --ssf-color-gray-100: #E5E5E5;
+  --ssf-color-gray-200: #D0D0D0;
+  --ssf-color-gray-300: #C4C4C4;
+  --ssf-color-gray-400: #BEBEBE;
+  --ssf-color-gray-500: #9A9A9A;
+  --ssf-color-gray-600: #7A7A7A;
+  --ssf-color-gray-700: #5A5A5A;
+  --ssf-color-gray-800: #3D3D3D;
+  --ssf-color-gray-825: #2E2E2E;
+  --ssf-color-gray-850: #242424;
+  --ssf-color-gray-900: #1A1A1A;
+  --ssf-color-gray-950: #0A0A0A;
+
+  --ssf-color-success: #4CAF82;
+  --ssf-color-warning: #E5851C;
+  --ssf-color-error:   #C94C4C;
+  --ssf-color-info:    #6B9BB8;
+
+  /* --- 2. SEMANTICI — SUPERFICI ---------------------------- */
+  --ssf-bg-base:    var(--ssf-color-gray-950);
+  --ssf-bg-alt:     var(--ssf-color-gray-900);   /* alternanza di sezione — P6b */
+  --ssf-bg-raised:  var(--ssf-color-gray-850);
+  --ssf-bg-overlay: var(--ssf-color-gray-825);
+  --ssf-bg-inverse: var(--ssf-color-gray-50);
+
+  /* --- 3. SEMANTICI — TESTO -------------------------------- */
+  --ssf-text-max:       var(--ssf-color-white);   /* raro: apertura di pagina */
+  --ssf-text-heading:   var(--ssf-color-gray-50);   /* Display, H1, H2, H3 — P5 */
+  --ssf-text-lead:      var(--ssf-color-gray-100);  /* P9: paragrafo d'apertura */
+  --ssf-text-primary:   var(--ssf-color-gray-300);
+  --ssf-text-secondary: var(--ssf-color-gray-500);
+  --ssf-text-meta:      var(--ssf-color-gray-600);  /* SOLO su bg-base: altrove scende sotto AA */
+  --ssf-text-disabled:  var(--ssf-color-gray-700);
+  --ssf-text-inverse:   var(--ssf-color-gray-950);
+  --ssf-text-accent:    var(--ssf-color-gold);
+
+  /* --- 4. SEMANTICI — BORDI ------------------------------- */
+  --ssf-border-subtle:      var(--ssf-color-gray-900);
+  --ssf-border-default:     var(--ssf-color-gray-800);
+  --ssf-border-strong:      var(--ssf-color-gray-700);
+  --ssf-border-interactive: var(--ssf-color-gray-600);  /* min 3:1 */
+  --ssf-border-interactive-hover: var(--ssf-color-gray-500);  /* E2 di [4.3] */
+  --ssf-border-selected:    var(--ssf-color-gray-300);
+  --ssf-border-accent:      var(--ssf-color-gold);
+  --ssf-border-width:       1px;
+  --ssf-border-width-thick: 1.5px;
+
+  /* --- 5. SEMANTICI — AZIONE ------------------------------ */
+  --ssf-action-primary-bg:             var(--ssf-color-gold);
+  --ssf-action-primary-bg-hover:       var(--ssf-color-gold-light);
+  --ssf-action-primary-bg-active:      var(--ssf-color-gold-dark);
+  --ssf-action-primary-text:           var(--ssf-color-gray-950);
+  --ssf-action-primary-glow:           var(--ssf-glow-accent);          /* M4 */
+  --ssf-action-secondary-border:       var(--ssf-color-gray-500);  /* M4: era gray-300,
+                                        piu' contrastata della CTA primaria */
+  --ssf-action-secondary-text:         var(--ssf-color-gray-500);
+  --ssf-action-secondary-border-hover: var(--ssf-color-gold);
+  --ssf-action-secondary-text-hover:   var(--ssf-color-gold);
+  --ssf-action-ghost-text:             var(--ssf-color-gray-400);
+  --ssf-action-ghost-text-hover:       var(--ssf-color-gold);
+
+  /* --- 6. SEMANTICI — FEEDBACK ---------------------------- */
+  /* Il testo del messaggio e' SEMPRE --ssf-feedback-text.
+     Il colore funzionale sta nell'icona e nel bordo laterale. */
+  --ssf-feedback-text: var(--ssf-color-gray-300);
+
+  --ssf-feedback-success:         var(--ssf-color-success);
+  --ssf-feedback-success-surface: #162820;
+  --ssf-feedback-warning:         var(--ssf-color-warning);
+  --ssf-feedback-warning-surface: #31200D;
+  --ssf-feedback-error:           var(--ssf-color-error);
+  --ssf-feedback-error-surface:   #2C1616;
+  --ssf-feedback-info:            var(--ssf-color-info);
+  --ssf-feedback-info-surface:    #1B2429;
+  --ssf-feedback-bar-width:       4px;
+
+  /* --- 7. FOCUS ------------------------------------------- */
+  --ssf-focus-ring-color:  var(--ssf-color-white);
+  --ssf-focus-ring-width:  2px;
+  --ssf-focus-ring-offset: 2px;
+
+  /* --- 8. SPACING — scala 4pt, il nome e' il valore in px -- */
+  --ssf-space-0:   0;
+  --ssf-space-2:   0.125rem;
+  --ssf-space-4:   0.25rem;
+  --ssf-space-8:   0.5rem;
+  --ssf-space-12:  0.75rem;
+  --ssf-space-16:  1rem;
+  --ssf-space-20:  1.25rem;
+  --ssf-space-24:  1.5rem;
+  --ssf-space-32:  2rem;
+  --ssf-space-40:  2.5rem;
+  --ssf-space-48:  3rem;
+  --ssf-space-64:  4rem;
+  --ssf-space-80:  5rem;
+  --ssf-space-96:  6rem;
+  --ssf-space-128: 8rem;
+
+  /* --- 9. RADIUS ------------------------------------------ */
+  --ssf-radius-none: 0;
+  --ssf-radius-sm:   2px;
+  --ssf-radius-md:   4px;
+  --ssf-radius-full: 9999px;
+
+  /* --- 10. ELEVAZIONE — nessuna ombra su fondo nero ------- */
+  --ssf-ring-hairline: inset 0 0 0 1px var(--ssf-border-default);
+  --ssf-ring-strong:   inset 0 0 0 1px var(--ssf-border-strong);
+  --ssf-glow-accent:   0 0 0 1px rgba(201, 168, 76, 0.45),
+                       0 0 20px rgba(201, 168, 76, 0.15);
+  --ssf-scrim:         rgba(10, 10, 10, 0.78);
+
+  /* --- 11. OPACITA' --------------------------------------- */
+  --ssf-opacity-hover-veil: 0.06;
+  --ssf-opacity-press-veil: 0.12;
+  --ssf-opacity-disabled:   0.45;
+  --ssf-opacity-scrim:      0.78;
+
+  /* --- 12. Z-INDEX — scala chiusa ------------------------- */
+  --ssf-z-base:     0;
+  --ssf-z-raised:   10;
+  --ssf-z-sticky:   100;
+  --ssf-z-header:   200;
+  --ssf-z-dropdown: 300;
+  --ssf-z-scrim:    400;
+  --ssf-z-modal:    500;
+  --ssf-z-toast:    600;
+  --ssf-z-tooltip:  700;
+
+  /* --- 13. BREAKPOINT ------------------------------------- */
+  /* ATTENZIONE: non utilizzabili dentro @media.
+     Qui per documentazione e per l'uso da JavaScript. */
+  --ssf-header-h: 56px;        /* altezza barra — [4.3] §9.1, richiesto da [4.4] E1.
+                                  Diventa 72px da 1024px in su, nel foglio di [4.2] */
+  --ssf-bp-sm: 640px;
+  --ssf-bp-md: 1024px;
+  --ssf-bp-lg: 1280px;
+
+  /* --- 14. TIPOGRAFIA — da [3.3] §13 ---------------------- */
+  --ssf-font-display: 'Cinzel', 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  --ssf-font-text:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont,
+                      'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ssf-font-mono:    'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  --ssf-fw-light:    300;
+  --ssf-fw-regular:  400;
+  --ssf-fw-medium:   500;
+  --ssf-fw-semibold: 600;
+  --ssf-fw-bold:     700;
+
+  /* SORGENTE UNICA della scala. Fino al 24/08 queste erano tredici
+     misure fisse che il foglio di [4.2] sovrascriveva tutte, e i
+     valori avevano gia' cominciato a divergere (h5: 1.1875 contro
+     1.188). Le clamp di [4.2] sono state portate qui e tolte di la'.
+     Rilievo 4.1-C2.
+     Ogni clamp ha un termine in rem, o il testo smette di
+     ingrandirsi con le impostazioni del browser: WCAG 1.4.4.
+     I valori DESKTOP sono il tetto di ogni clamp, e coincidono
+     con la tabella di [3.3] Sec.13, che resta la motivazione.    */
+  --ssf-fs-display: clamp(2.5rem,   1.687rem + 3.61vw,  4rem);
+  --ssf-fs-h1:      clamp(2rem,     1.458rem + 2.41vw,  3rem);
+  --ssf-fs-h2:      clamp(1.75rem,  1.479rem + 1.20vw,  2.25rem);
+  --ssf-fs-h3:      clamp(1.5rem,   1.364rem + 0.602vw, 1.75rem);
+  --ssf-fs-h4:      clamp(1.25rem,  1.182rem + 0.301vw, 1.375rem);
+  --ssf-fs-h5:      clamp(1.125rem, 1.091rem + 0.151vw, 1.1875rem);
+  --ssf-fs-lead:    clamp(1.125rem, 1.057rem + 0.301vw, 1.25rem);
+  /* fissi per scelta: sotto queste misure il testo non si comprime */
+  --ssf-fs-h6:      1rem;
+  --ssf-fs-body:    1rem;
+  --ssf-fs-body-s:  0.875rem;
+  --ssf-fs-caption: 0.8125rem;
+  --ssf-fs-eyebrow: 0.8125rem;
+  --ssf-fs-label:   0.875rem;
+
+  --ssf-lh-display: 1.05;
+  --ssf-lh-h1:      1.10;
+  --ssf-lh-h2:      1.15;
+  --ssf-lh-h3:      1.20;
+  --ssf-lh-h4:      1.30;
+  --ssf-lh-h5:      1.35;
+  --ssf-lh-h6:      1.40;
+  --ssf-lh-lead:    1.50;
+  --ssf-lh-body:    1.60;
+  --ssf-lh-body-s:  1.55;
+  --ssf-lh-caption: 1.45;
+  --ssf-lh-eyebrow: 1.30;
+  --ssf-lh-label:   1.20;
+
+  --ssf-ls-display: 0.04em;
+  --ssf-ls-h1:      0.04em;
+  --ssf-ls-h2:      0.04em;
+  --ssf-ls-h3:      0.06em;
+  --ssf-ls-h4:      0;
+  --ssf-ls-h5:      0;
+  --ssf-ls-h6:      0.08em;
+  --ssf-ls-lead:    0;
+  --ssf-ls-body:    0;
+  --ssf-ls-body-s:  0.005em;
+  --ssf-ls-caption: 0.01em;
+  --ssf-ls-eyebrow: 0.12em;
+  --ssf-ls-label:   0.02em;
+
+  /* --- 15. ICONE — da [3.4] §11.2 ------------------------- */
+  --ssf-icon-stroke:       2px;
+  --ssf-icon-stroke-fine:  1.5px;
+  --ssf-icon-size-sm:      16px;
+  --ssf-icon-size-md:      20px;
+  --ssf-icon-size-lg:      24px;
+  --ssf-icon-size-xl:      32px;
+  --ssf-icon-size-display: 48px;
+  --ssf-icon-target-min:   44px;
+
+  /* --- 16. GRAFICA DI SUPPORTO — da [3.5] §3.2 ------------ */
+  --ssf-frame-outer: var(--ssf-border-width-thick) solid var(--ssf-color-anthracite);
+  --ssf-frame-inner: var(--ssf-border-width) solid var(--ssf-color-graphite);
+  --ssf-frame-gap:   var(--ssf-space-4);
+  --ssf-frame-pad:   var(--ssf-space-24);
+
+  /* --- 18. SUPERFICI COMPOSITE — P10, 18/08/2026 -------- */
+  /* Il fondo non e' piatto: e' acciaio. Gradiente NEUTRO.
+     [3.2] §7.2 vieta i gradienti D'ORO, non quelli di luminosita'. */
+  --ssf-bg-steel: radial-gradient(120% 90% at 78% 18%,
+                    var(--ssf-color-gray-850) 0%,
+                    var(--ssf-color-gray-900) 42%,
+                    var(--ssf-color-gray-950) 100%);
+  /* La sezione carta. NON e' un tema chiaro: e' una sezione sola,
+     ed e' la pagina del manoscritto. Max 1 ogni 5 sezioni, per
+     rispettare il "respiro del nero" di [3.2] §6. */
+  --ssf-bg-paper:
+  /* Quattro macchie morbide agli angoli, non una fascia.
+    Ogni angolo ha tre fermate: la caduta e' graduale, non lineare.
+  L'angolo basso-destra e' il piu' carico, come nella grafica social. */
+  radial-gradient(48% 64% at 0% 0%,
+  rgba(10,10,10,.115) 0%, rgba(10,10,10,.042) 46%, rgba(10,10,10,0) 80%),
+  radial-gradient(48% 64% at 100% 0%,
+  rgba(10,10,10,.19) 0%, rgba(10,10,10,.07) 46%, rgba(10,10,10,0) 80%),
+  radial-gradient(52% 68% at 0% 100%,
+  rgba(10,10,10,.10) 0%, rgba(10,10,10,.038) 46%, rgba(10,10,10,0) 80%),
+  radial-gradient(58% 74% at 100% 100%,
+  rgba(10,10,10,.25) 0%, rgba(10,10,10,.095) 46%, rgba(10,10,10,0) 82%),
+  linear-gradient(135deg, #EAEAEA 0%, #E3E3E3 42%, #D4D4D4 100%);
+
+  /* --- 17. MOTION — da [4.5] ------------------------------ */
+  /* La durata segue la DISTANZA percorsa, non l'importanza.
+     Nessuna cubic-bezier ha un punto di controllo con y fuori
+     da [0,1]: e' cosi' che si vieta il rimbalzo. [4.5] §3.1  */
+  --ssf-dur-state: 120ms;   /* il colore cambia, niente si muove */
+  --ssf-dur-move:  240ms;   /* qualcosa compare o percorre <=24px */
+  --ssf-dur-max:   400ms;   /* IL TETTO, non un gradino da usare */
+
+  --ssf-ease-enter:   cubic-bezier(0.2, 0, 0, 1);   /* predefinita */
+  --ssf-ease-move:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ssf-ease-exit:    cubic-bezier(0.4, 0, 1, 1);
+
+  --ssf-move-rise: 12px;    /* unica distanza d'ingresso ammessa */
+}
+
+/* ============================================================
+   SEZIONE CARTA — si applica a una sezione, non alla pagina.
+   Nome canonico .ssf-section--paper ([4.3] §12). Era .ssf-paper:
+   rinominata da [4.5] §9.5 — la correzione AA di [4.4] e' scritta
+   per questo nome, e sotto l'altro non entrava in vigore.
+   Stesso meccanismo del blocco @media print: si ridefiniscono
+   i token semantici, e i componenti seguono senza sapere nulla.
+   ============================================================ */
+.ssf-section--paper {
+  background: var(--ssf-bg-paper);
+  color-scheme: light;             /* [4.5] §9.6: altrimenti le caselle
+                                      di spunta restano scure su fondo chiaro */
+
+  /* LA RIGA SENZA CUI IL MECCANISMO NON FUNZIONA. [4.5] §9.8.
+     Ridefinire un token cambia solo chi DICHIARA color: var(...).
+     Chi il colore lo EREDITA ha gia' il valore calcolato del tema
+     scuro, e se lo tiene. Misurato sui pixel il 22/08: i paragrafi
+     che ereditano rendevano #C4C4C4 su #E3E3E3, cioe' 1,33:1.
+     Con questa riga l'intero sottoalbero eredita il valore carta.  */
+  color: var(--ssf-text-primary);
+
+  /* DUE livelli di testo, non tre. [4.5] §9.4:
+     #5A5A5A regge il 4,5:1 solo su fondo piu' chiaro di #D1D1D1,
+     e il gradiente della carta finisce a #D4D4D4.               */
+  --ssf-text-heading:   #0A0A0A;   /* 16,5:1 chiaro -> 7,8:1 angolo */
+  --ssf-text-lead:      #0A0A0A;
+  --ssf-text-primary:   #3D3D3D;   /*  9,0:1 chiaro -> 6,0:1 ombra  */
+  --ssf-text-secondary: #3D3D3D;   /* era #5A5A5A: sotto AA         */
+  --ssf-text-meta:      #3D3D3D;   /* era #5A5A5A: sotto AA         */
+  --ssf-text-accent:    #0A0A0A;   /* l'oro su carta: 1,90 - 1,54:1 */
+
+  /* Anello di focus: applica la correzione AA di [4.4] §5.3.
+     Bianco su carta valeva 1,31:1 — invisibile.                */
+  --ssf-focus-ring-color: #0A0A0A;
+
+  --ssf-border-default: var(--ssf-color-gray-200);
+  --ssf-border-strong:  var(--ssf-color-graphite);
+
+  --ssf-action-primary-bg:       #0A0A0A;
+  --ssf-action-primary-text:     #FFFFFF;
+  --ssf-action-secondary-border: #3D3D3D;
+  --ssf-action-secondary-text:   #3D3D3D;
+  --ssf-action-secondary-border-hover: #0A0A0A;
+  --ssf-action-secondary-text-hover:   #0A0A0A;
+  /* Il collegamento di testo. Restava #BEBEBE, cioe' 1,03-1,54:1
+     sulla carta: invisibile. Non si vedeva finche' nessun
+     componente usava il token; il collegamento di [4.3] 9-ter,
+     aggiunto il 24/08, lo usa. [4.5] Sec.9.10                   */
+  --ssf-action-ghost-text:       #3D3D3D;   /* 6,03 - 9,03:1 */
+  --ssf-action-ghost-text-hover: #0A0A0A;   /* sulla carta l'oro non c'e' */
+
+  /* Sulla carta a schermo l'oro non c'e': ne' testo, ne' bordo,
+     ne' bagliore — a 1,54-1,90:1 non si vede. [4.5] §9.2 e §9.7.
+     Diverso da @media print, dove il filetto dorato degli attestati
+     e' inchiostro vero e resta ammesso come ornamento.            */
+  --ssf-border-accent: #0A0A0A;
+  --ssf-glow-accent: none;
+  --ssf-action-primary-glow: none;
+}
+
+/* ============================================================
+   STAMPA — l'unico contesto chiaro del sistema
+   Decisione P3, 18/08/2026: nessun tema chiaro per il sito.
+   Il solo fondo chiaro che SSF ha davvero e' la carta.
+   ============================================================ */
+@media print {
+  :root {
+    --ssf-bg-base:    #FFFFFF;
+    --ssf-bg-alt:     #FFFFFF;   /* nato con P6b, mai ridefinito qui: in stampa
+                                    l'alternanza restava un rettangolo NERO a
+                                    pagina piena. Trovato il 22/08           */
+    --ssf-bg-raised:  #FFFFFF;   /* niente campiture: il confine lo fa il bordo */
+    --ssf-bg-overlay: #FFFFFF;
+    --ssf-bg-inverse: #0A0A0A;
+    /* Le due superfici composite di P10/M5: in stampa diventano bianche.
+       Un gradiente d'acciaio stampato e' una lastra di grigio.             */
+    --ssf-bg-steel:   #FFFFFF;
+    --ssf-bg-paper:   #FFFFFF;
+
+    --ssf-text-max:       #0A0A0A;
+    /* heading e lead sono nati DOPO questo blocco, con P5 e P9, e non erano
+       mai stati ridefiniti qui: in stampa restavano #F2F2F2 e #E5E5E5, cioe'
+       1,12:1 e 1,26:1 su bianco. TUTTI i titoli erano invisibili.
+       Trovato rendendo la pagina in stampa il 22/08. [4.5] 9.9             */
+    --ssf-text-heading:   #0A0A0A;   /* era #F2F2F2 -> 1,12:1 */
+    --ssf-text-lead:      #0A0A0A;   /* era #E5E5E5 -> 1,26:1 */
+    --ssf-text-primary:   #0A0A0A;   /* 19.8:1 su bianco */
+    --ssf-text-secondary: #3D3D3D;   /* 10.9:1 su bianco */
+    --ssf-text-disabled:  #5A5A5A;
+    --ssf-text-inverse:   #FFFFFF;
+    --ssf-text-accent:    #0A0A0A;   /* l'oro su carta e' 2.3:1: mai come testo */
+
+    --ssf-border-subtle:      #D0D0D0;
+    --ssf-border-default:     #9A9A9A;
+    --ssf-border-strong:      #5A5A5A;
+    --ssf-border-interactive: #5A5A5A;
+    --ssf-border-selected:    #0A0A0A;
+    --ssf-border-accent:      #C9A84C;  /* solo ornamento, mai informazione */
+
+    --ssf-action-primary-bg:   #0A0A0A;
+    --ssf-action-primary-text: #FFFFFF;
+    /* il bottone testuale restava #BEBEBE: 1,86:1, invisibile */
+    --ssf-action-ghost-text:       #0A0A0A;
+    --ssf-action-ghost-text-hover: #0A0A0A;
+    --ssf-action-secondary-border: #5A5A5A;
+    --ssf-action-secondary-text:   #0A0A0A;
+
+    /* Le icone di stato su bianco valgono 2,7-3,0:1, sotto la soglia
+       non testuale. In stampa diventano NERE: vale la regola di [4.1] 4.6
+       — il colore non porta mai il significato da solo, lo portano la
+       forma dell'icona e il testo. Zero valori nuovi in tavolozza.        */
+    --ssf-feedback-success: #0A0A0A;
+    --ssf-feedback-warning: #0A0A0A;
+    --ssf-feedback-error:   #0A0A0A;
+    --ssf-feedback-info:    #0A0A0A;
+
+    --ssf-feedback-text:            #0A0A0A;
+    --ssf-feedback-success-surface: #FFFFFF;
+    --ssf-feedback-warning-surface: #FFFFFF;
+    --ssf-feedback-error-surface:   #FFFFFF;
+    --ssf-feedback-info-surface:    #FFFFFF;
+
+    --ssf-glow-accent: none;
+    --ssf-scrim:       transparent;
+  }
+
+  /* I browser NON stampano box-shadow: l'anello di elevazione sparisce.
+     Cio' che deve avere un confine sulla carta usa un border vero. */
+  .ssf-card { box-shadow: none; border: 1px solid var(--ssf-border-default); }
+
+  body { background: #FFFFFF; color: #0A0A0A; }
+}

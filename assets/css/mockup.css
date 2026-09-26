@@ -1,0 +1,47 @@
+/* ============================================================
+   Solo il mockup: fascia e segnaposto (progetto §6.2).
+   I segnaposto stanno nella tavolozza del sistema, tratteggiati,
+   e non sono mai dorati.
+   ============================================================ */
+
+.mockup-fascia { background: var(--ssf-bg-overlay); color: var(--ssf-text-primary);
+  border-bottom: 1px dashed var(--ssf-border-strong);
+  font-size: var(--ssf-fs-caption); line-height: 1.35; text-align: center;
+  padding: var(--ssf-space-8) var(--ssf-margin); margin: 0; }
+.mockup-fascia strong { letter-spacing: .1em; text-transform: uppercase; }
+
+/* Riquadro per foto, video, mappa, recensioni, tavole, loghi */
+.ph { margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--ssf-space-8); padding: var(--ssf-space-16); text-align: center;
+  background: var(--ssf-bg-raised); border: 1px dashed var(--ssf-border-strong);
+  color: var(--ssf-text-secondary); font-size: var(--ssf-fs-caption); line-height: var(--ssf-lh-caption);
+  width: 100%; }
+.ph svg { width: 28px; height: 28px; flex: none; }
+.ph strong { color: var(--ssf-text-primary); letter-spacing: .08em; }
+.ph--16x9 { aspect-ratio: 16 / 9; } .ph--3x2 { aspect-ratio: 3 / 2; }
+.ph--4x5 { aspect-ratio: 4 / 5; } .ph--1x1 { aspect-ratio: 1 / 1; }
+.ph--3x1 { aspect-ratio: 3 / 1; } .ph--auto { min-height: 12rem; }
+@media (max-width: 639px) { .ph--tel-4x5 { aspect-ratio: 4 / 5; } }
+.ssf-section--paper .ph { background: rgba(10, 10, 10, .05); border-color: #5A5A5A; color: #3D3D3D; }
+.ssf-section--paper .ph strong { color: #0A0A0A; }
+
+/* La foto d'apertura sta sotto il testo: il riquadro riempie la sezione */
+.ssf-hero__foto.ph { height: 100%; aspect-ratio: auto; justify-content: flex-end; align-items: flex-end;
+  text-align: right; background: transparent; border-color: var(--ssf-border-default); }
+.ssf-hero__foto.ph > * { max-width: 16rem; }
+@media (min-width: 1024px) {   /* su desktop la meta' destra e' libera: l'etichetta va li' */
+  .ssf-hero__foto.ph { padding-left: 50%; align-items: center; justify-content: center; text-align: center; }
+}
+
+/* Testo segnaposto: il descrittore, poi barre che mostrano quanto testo ci andra' */
+.ph-testo { color: var(--ssf-text-secondary); font-style: italic; margin: 0 0 var(--ssf-space-8);
+  max-width: var(--ssf-measure); }
+.ssf-lead.ph-testo, .ssf-sub.ph-testo { color: var(--ssf-text-primary); }
+.ph-righe { display: grid; gap: .55em; margin: 0 0 var(--ssf-space-16); max-width: var(--ssf-measure); }
+.ph-righe span { height: .6em; border-radius: 2px; background: var(--ssf-border-default); }
+.ph-righe span:last-child { width: 62%; }
+.ssf-section--paper .ph-righe span { background: rgba(10, 10, 10, .18); }
+
+/* Collegamenti che nel mockup non portano da nessuna parte */
+.ph-finto { color: var(--ssf-text-secondary); text-decoration: underline dotted; cursor: default; }
+.ph-nota { font-size: var(--ssf-fs-caption); color: var(--ssf-text-secondary); font-style: italic; }

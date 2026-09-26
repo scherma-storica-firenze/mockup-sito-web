@@ -1,0 +1,81 @@
+<!-- titolo: Contatti | voce: contatti -->
+<!-- Mappa §3.3 · la pagina d'arrivo di ogni CTA: il modulo è il primo elemento -->
+<section class="ssf-section ssf-section--steel" style="padding-top:var(--ssf-space-32)">
+  <div class="ssf-container ssf-affiancati" style="align-items:start">
+    <div>
+      <h1 class="ssf-h2" style="margin-top:0">[Titolo — chiedi il primo dei tre allenamenti, o scrivici]</h1>
+      <p class="ph-testo">[Ti rispondiamo entro 24 ore]</p>
+    </div>
+    <form action="grazie.html" method="get">
+      <div class="ssf-msg ssf-msg--info"><span>Nel mockup il modulo non invia: il bottone porta alla pagina di conferma.</span></div>
+      <div class="ssf-field"><label for="nome">Nome</label><input class="ssf-input" id="nome" name="nome" autocomplete="name"></div>
+      <div class="ssf-field"><label for="email">Email</label><input class="ssf-input" id="email" name="email" type="email" autocomplete="email"></div>
+      <div class="ssf-field"><label for="canale">Come ci hai conosciuti? (facoltativo)</label>
+        <select class="ssf-select" id="canale" name="canale">
+          <option value="">Scegli</option><option>Ricerca su Google</option><option>Instagram</option>
+          <option>YouTube</option><option>Un amico o un socio</option><option>Un evento</option><option>Altro</option>
+        </select></div>
+      <div class="ssf-field"><label for="messaggio">Messaggio</label>
+        <textarea class="ssf-textarea" id="messaggio" name="messaggio" placeholder="[Suggerimento — quali sere preferisci, o cosa vuoi chiederci]"></textarea></div>
+      <label class="ssf-check"><input type="checkbox" name="consenso"><span>Ho letto l'<a class="ph-finto" title="Documento esterno: nel mockup non si apre">informativa privacy</a></span></label>
+      <div class="ssf-azioni" style="margin-top:var(--ssf-space-16)">
+        <button class="ssf-btn ssf-btn--primary" type="submit">Prenota il primo dei tre allenamenti gratuiti</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 3 · Cosa succede dopo, e la garanzia sul primo passo — vicino al modulo -->
+<section class="ssf-section ssf-section--alt">
+  <div class="ssf-container ssf-affiancati">
+    <div>
+      <p class="ssf-occhiello">[Occhiello]</p>
+      <h2 class="ssf-h2">[Titolo — cosa succede dopo]</h2>
+      <ol class="ssf-passi" style="grid-template-columns:1fr">
+        <li><p class="ph-testo">[Ti rispondiamo entro 24 ore]</p></li>
+        <li><p class="ph-testo">[Ci accordiamo sulla sera]</p></li>
+        <li><p class="ph-testo">[Vieni con abiti comodi: al resto pensiamo noi]</p></li>
+        <li><p class="ph-testo">[Dopo tre allenamenti decidi tu]</p></li>
+      </ol>
+      <div class="ssf-cornice" style="margin-top:var(--ssf-space-32)"><div>
+        <p class="ssf-cornice__titolo">[Garanzia sul primo passo]</p>
+        <p class="ph-testo">[I tre allenamenti sono gratuiti e non ti impegnano a niente]</p>
+      </div></div>
+    </div>
+    {{foto 4x5 | Immagine 2 di [3.6] · qualcuno alla prima sera, accanto all'istruttore · volto scoperto · palestra}}
+  </div>
+</section>
+
+<!-- 4 · Gli altri modi per scriverci -->
+<section class="ssf-section">
+  <div class="ssf-container">
+    <div class="ssf-intestazione">
+      <p class="ssf-occhiello">[Occhiello]</p>
+      <h2 class="ssf-h2">[Titolo — altri modi per scriverci]</h2>
+    </div>
+    <div class="ssf-griglia">
+      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">WhatsApp</h3><p class="ph-testo">[Numero · il bottone in basso a destra apre la chat]</p></div>
+      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">Email</h3><p class="ph-testo">[Indirizzo della casella dell'associazione]</p></div>
+      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">Telefono</h3><p class="ph-testo">[Numero, come testo]</p></div>
+      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">Social</h3><p class="ph-testo">[Instagram · Facebook · YouTube]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · Dove siamo — stessi dati della scheda Google Business Profile -->
+<section class="ssf-section ssf-section--alt" id="dove">
+  <div class="ssf-container ssf-affiancati">
+    <div>
+      <p class="ssf-occhiello">[Occhiello]</p>
+      <h2 class="ssf-h2">[Titolo — dove siamo]</h2>
+      <p class="ph-testo">[Indirizzo della palestra]</p>
+      <p class="ph-testo">[Sere di allenamento · dalle 21 alle 23]</p>
+      <p class="ph-testo">[Come arrivare: mezzi, parcheggio]</p>
+      {{righe 2}}
+    </div>
+    <div class="ssf-pila">
+      {{mappa 3x2 | la sede di allenamento · mappa di Google}}
+      {{foto 3x2 | Immagine 9 di [3.6] · la palestra la sera, luci accese}}
+    </div>
+  </div>
+</section>
