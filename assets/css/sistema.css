@@ -358,6 +358,18 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 @media (min-width: 1024px) { .ssf-newsletter__riga { display: flex; gap: var(--ssf-space-8); } }
 .ssf-newsletter__riga { display: grid; gap: var(--ssf-space-8); }
 
+/* Barra dei numeri sotto la prima schermata — richiesta dell'utente, 26/09 */
+.ssf-numeri { background: var(--ssf-bg-alt); padding-block: var(--ssf-space-32);
+  border-block: var(--ssf-border-width) solid var(--ssf-border-default); }
+.ssf-numeri__elenco { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ssf-space-24) var(--ssf-gutter); margin: 0; text-align: center; }
+@media (min-width: 768px) { .ssf-numeri__elenco { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.ssf-numeri__elenco > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: var(--ssf-space-4); }
+.ssf-numeri__elenco dd { margin: 0; font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h2);
+  font-weight: var(--ssf-fw-semibold); line-height: 1; color: var(--ssf-text-accent); }   /* oro-segno */
+.ssf-numeri__elenco dt { font-size: var(--ssf-fs-body-s); line-height: var(--ssf-lh-body-s);
+  color: var(--ssf-text-secondary); }
+
 .ssf-pila { display: grid; gap: var(--ssf-space-24); }
 .ssf-stelle { color: var(--ssf-text-accent); letter-spacing: .12em; margin: 0 0 var(--ssf-space-8); }
 .ssf-voto { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ssf-space-8); }
