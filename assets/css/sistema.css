@@ -173,11 +173,15 @@ p { margin: 0 0 var(--ssf-space-16); }
 .ssf-faq details[open] summary::after { content: "\2212"; }
 .ssf-faq details > :not(summary) { max-width: var(--ssf-measure); padding-bottom: var(--ssf-space-24); }
 
+/* Utente, 26/09: i collegamenti verso altre pagine sono in oro, per farli riconoscere.
+   E' oro-segno. Sulla carta --ssf-text-accent diventa nero da solo (tokens.css). */
 a:not([class]), a.ssf-link-solo {
-  color: var(--ssf-action-ghost-text); text-decoration: underline;
+  color: var(--ssf-text-accent); text-decoration: underline; font-weight: var(--ssf-fw-medium);
   text-underline-offset: 0.15em; text-decoration-thickness: from-font;
 }
-a:not([class]):hover, a.ssf-link-solo:hover { color: var(--ssf-action-ghost-text-hover); }
+a:not([class]):hover, a.ssf-link-solo:hover { text-decoration-thickness: 2px; }
+.ssf-card__vai { color: var(--ssf-text-accent); font-weight: var(--ssf-fw-semibold); font-size: var(--ssf-fs-body-s); }
+a.ssf-event .ssf-event__titolo { color: var(--ssf-text-accent); }
 .ssf-link-solo { display: inline-flex; align-items: center; min-height: 24px;
                  padding-block: var(--ssf-space-4); }
 
@@ -191,7 +195,7 @@ a:not([class]):hover, a.ssf-link-solo:hover { color: var(--ssf-action-ghost-text
 }
 .ssf-nav__logo { display: inline-flex; align-items: center; min-height: 44px; flex: none;
                  color: var(--ssf-text-heading); text-decoration: none; }
-.ssf-nav__logo img { height: 32px; width: auto; }
+.ssf-nav__logo img { height: 36px; width: auto; }
 .ssf-nav__voce { display: inline-flex; align-items: center; min-height: 44px;
                  color: var(--ssf-text-primary); text-decoration: none;
                  font-size: var(--ssf-fs-body); font-weight: var(--ssf-fw-medium); white-space: nowrap; }
@@ -223,7 +227,8 @@ a:not([class]):hover, a.ssf-link-solo:hover { color: var(--ssf-action-ghost-text
 @media (min-width: 1024px) {
   .ssf-nav { --ssf-header-h: 72px; gap: var(--ssf-space-24); }
   .ssf-nav__menu { display: none; }
-  .ssf-nav__voci { display: flex; gap: var(--ssf-space-24); margin-inline-start: auto; }
+  .ssf-nav__voci { display: flex; gap: var(--ssf-space-24); margin-inline: auto; }
+  .ssf-nav__logo img { height: 48px; }
   .ssf-nav > .ssf-btn { margin-inline-start: 0; }
 }
 /* L'etichetta lunga non sta accanto a sette voci a 1024px: misurato in costruzione */
@@ -364,9 +369,9 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-wa { position: fixed; right: var(--ssf-space-16); bottom: var(--ssf-space-16);
   z-index: var(--ssf-z-sticky); width: 56px; height: 56px; border-radius: var(--ssf-radius-full);
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--ssf-bg-raised); color: var(--ssf-text-heading);
-  border: var(--ssf-border-width) solid var(--ssf-border-strong); cursor: pointer; padding: 0;
+  background: #25D366; color: #FFFFFF;   /* verde WhatsApp: decisione dell'utente, 26/09 */
+  border: 0; cursor: pointer; padding: 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, .5); }
-.ssf-wa:hover { border-color: var(--ssf-text-heading); }
+.ssf-wa:hover { background: #1EBE5A; }
 .ssf-wa svg { width: 26px; height: 26px; }
 @media (min-width: 1024px) { .ssf-wa { right: var(--ssf-space-32); bottom: var(--ssf-space-32); } }
