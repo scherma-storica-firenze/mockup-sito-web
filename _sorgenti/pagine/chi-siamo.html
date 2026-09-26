@@ -1,86 +1,122 @@
 <!-- titolo: Chi siamo | voce: chi-siamo -->
-<!-- Mappa §3.4 · fiducia: empatia, meccanismo, autorità che si mostra -->
-<section class="ssf-section ssf-section--steel">
-  {{giglio}}
-  <div class="ssf-container ssf-affiancati">
-    <div>
+<!-- Mappa §3.4 · fiducia: empatia, meccanismo, autorità che si mostra.
+     Ogni sezione ha una forma diversa dalla precedente (richiesta dell'utente) -->
+
+<!-- 1 · BANDA: apertura a tutta larghezza, pagina d'identità: location ammessa -->
+<section class="ssf-banda">
+  {{foto sfondo/16x9 | apertura di sezione · praticanti di oggi su fondo pulito · location ammessa}}
+  <div class="ssf-container">
+    <div class="ssf-banda__testo">
       <p class="ssf-occhiello">[Occhiello]</p>
       <h1 class="ssf-h1">[Titolo — chi siamo]</h1>
-      <p class="ssf-sub ph-testo">[Sottotitolo — una frase su cosa ci tiene insieme]</p>
+      <p class="ph-testo">[Sottotitolo — una frase su cosa ci tiene insieme]</p>
     </div>
-    {{foto 3x2 | apertura di sezione · praticanti di oggi su fondo pulito · location ammessa}}
   </div>
 </section>
 
+<!-- 2 · La storia — DICHIARAZIONE + LINEA DEL TEMPO -->
 <section class="ssf-section">
-  <div class="ssf-container ssf-affiancati">
-    <div>
-      <p class="ssf-occhiello">[Occhiello — la storia]</p>
-      <h2 class="ssf-h2">[Titolo — la domanda da cui siamo partiti, nel 2017]</h2>
-      <p class="ph-testo ssf-dropcap">[Paragrafo d'apertura con capolettera — la storia della fondazione]</p>
-      {{righe 6}}
+  <div class="ssf-container">
+    <div class="ssf-dichiarazione">
+      <p class="ssf-occhiello" style="justify-content:center">[Occhiello — la storia]</p>
+      <p class="ssf-dichiarazione__frase">[La domanda da cui siamo partiti, nel 2017]</p>
+      <p class="ph-testo">[Due righe — la storia della fondazione, in breve]</p>
     </div>
-    {{foto 3x2 | Immagine 11 di [3.6] · il gruppo, tutti, di fronte}}
+    <ol class="ssf-tappe">
+      <li><strong>2017</strong><span class="ph-testo">[La fondazione]</span></li>
+      <li><strong>[anno]</strong><span class="ph-testo">[Le prime gare nel circuito]</span></li>
+      <li><strong>[anno]</strong><span class="ph-testo">[La prima tappa nazionale organizzata a Firenze]</span></li>
+      <li><strong>[oggi]</strong><span class="ph-testo">[Quanti siamo, e dove ci alleniamo]</span></li>
+    </ol>
   </div>
 </section>
 
-<!-- Sezione carta: il metodo e il trattato. Fiore era friulano: niente accostamenti a Firenze -->
+<!-- 3 · Il metodo — carta · PAGINA DI LIBRO: la tavola grande al centro, il testo su due colonne.
+     Fiore era friulano: nessun accostamento a Firenze -->
 <section class="ssf-section ssf-section--paper">
-  <div class="ssf-container ssf-affiancati ssf-affiancati--inverso">
-    <div>
+  {{giglio}}
+  <div class="ssf-container">
+    <div class="ssf-intestazione ssf-centro" style="max-width:none">
       <p class="ssf-occhiello">[Occhiello — il metodo]</p>
       <h2 class="ssf-h2">[Titolo — studiare il trattato, verificarlo in gara]</h2>
-      <p class="ph-testo">[Paragrafi — il trattato di Fiore dei Liberi e come lo usiamo]</p>
-      {{righe 6}}
     </div>
-    <div class="ssf-pila">
+    <div style="max-width:30rem;margin:var(--ssf-space-32) auto 0">
       {{tavola 4x5 | Fior di Battaglia, Getty · una coppia di figure intera}}
-      {{foto 3x2 | Immagine 5 di [3.6] · il trattato aperto accanto alle spade}}
+    </div>
+    <div class="ssf-colonne">
+      <p class="ph-testo ssf-dropcap">[Paragrafi — il trattato di Fiore dei Liberi, e come lo usiamo: si legge la tavola, si prova in palestra, si verifica in gara]</p>
+      {{righe 10}}
     </div>
   </div>
 </section>
 
-<section class="ssf-section ssf-section--alt">
-  <div class="ssf-container ssf-affiancati">
-    <div>
+<!-- 4 · L'agonismo — ASIMMETRICO: foto grande con il testo sovrapposto -->
+<section class="ssf-section">
+  <div class="ssf-container ssf-asimmetrico">
+    {{foto 16x9 | Immagine 8 di [3.6] · una tappa del circuito, in gara · archivio}}
+    <div class="ssf-asimmetrico__testo">
       <p class="ssf-occhiello">[Occhiello — l'agonismo]</p>
       <h2 class="ssf-h2">[Titolo — l'unica scuola a Firenze che gareggia]</h2>
       <p class="ph-testo">[Paragrafo — i circuiti, le tappe che organizziamo: si mostra, non si dichiara]</p>
-      {{righe 4}}
+      {{righe 3}}
       <a class="ssf-link-solo" href="eventi.html">Vedi gli eventi</a>
     </div>
-    {{foto 3x2 | Immagine 8 di [3.6] · una tappa del circuito, in gara · archivio}}
   </div>
 </section>
 
-<section class="ssf-section">
+<!-- 5 · Gli istruttori — RITRATTI senza card. Nessun nome nel mockup -->
+<section class="ssf-section ssf-section--alt">
   <div class="ssf-container">
     <div class="ssf-intestazione">
       <p class="ssf-occhiello">[Occhiello]</p>
       <h2 class="ssf-h2">[Titolo — gli istruttori]</h2>
       <p class="ph-testo">[Paragrafo — accreditati, certificati, in formazione continua]</p>
     </div>
-    <div class="ssf-griglia">
-      <div class="ssf-card">{{foto 4x5 | ritratto, volto scoperto, maschera in mano}}<p class="ssf-h5" style="margin-top:0">[Nome dell'istruttore]</p><p class="ph-testo">[Qualifiche · da quanto insegna · cosa insegna]</p></div>
-      <div class="ssf-card">{{foto 4x5 | ritratto, volto scoperto, maschera in mano}}<p class="ssf-h5" style="margin-top:0">[Nome dell'istruttore]</p><p class="ph-testo">[Qualifiche · da quanto insegna · cosa insegna]</p></div>
-      <div class="ssf-card">{{foto 4x5 | ritratto, volto scoperto, maschera in mano}}<p class="ssf-h5" style="margin-top:0">[Nome dell'istruttore]</p><p class="ph-testo">[Qualifiche · da quanto insegna · cosa insegna]</p></div>
+    <div class="ssf-profili">
+      <div>{{foto 4x5 | ritratto, volto scoperto}}<p class="ssf-h5" style="margin-top:0">[Nome]</p><p class="ph-testo">[Qualifica · cosa insegna]</p></div>
+      <div>{{foto 4x5 | ritratto, volto scoperto}}<p class="ssf-h5" style="margin-top:0">[Nome]</p><p class="ph-testo">[Qualifica · cosa insegna]</p></div>
+      <div>{{foto 4x5 | ritratto, volto scoperto}}<p class="ssf-h5" style="margin-top:0">[Nome]</p><p class="ph-testo">[Qualifica · cosa insegna]</p></div>
+      <div>{{foto 4x5 | ritratto, volto scoperto}}<p class="ssf-h5" style="margin-top:0">[Nome]</p><p class="ph-testo">[Qualifica · cosa insegna]</p></div>
+      <div>{{foto 4x5 | ritratto, volto scoperto}}<p class="ssf-h5" style="margin-top:0">[Nome]</p><p class="ph-testo">[Qualifica · cosa insegna]</p></div>
     </div>
   </div>
 </section>
 
+<!-- 6 · Come stiamo insieme — carta · DICHIARAZIONE + MOSAICO -->
 <section class="ssf-section ssf-section--paper">
   {{giglio}}
-  <div class="ssf-container ssf-affiancati ssf-affiancati--inverso">
-    <div>
-      <p class="ssf-occhiello">[Occhiello]</p>
-      <h2 class="ssf-h2">[Titolo — come stiamo insieme]</h2>
-      <p class="ph-testo">[Paragrafo — il gruppo come valore primo: l'attrezzatura si condivide, dopo un torneo si analizza insieme]</p>
-      {{righe 4}}
+  <div class="ssf-container">
+    <div class="ssf-dichiarazione">
+      <p class="ssf-occhiello" style="justify-content:center">[Occhiello — come stiamo insieme]</p>
+      <p class="ssf-dichiarazione__frase">[Una frase del manifesto: il gruppo come valore primo]</p>
+      <p class="ph-testo">[Due righe — l'attrezzatura si condivide, dopo un torneo si analizza insieme]</p>
     </div>
-    {{foto 4x5 | Immagine 3 di [3.6] · volti scoperti dopo l'allenamento · palestra}}
+    <div class="ssf-mosaico">
+      {{foto 3x2 | Immagine 11 di [3.6] · il gruppo, tutti, di fronte}}
+      {{foto 3x2 | Immagine 3 di [3.6] · volti scoperti dopo l'allenamento}}
+      {{foto 3x2 | Immagine 7 di [3.6] · il momento del controllo, ci si saluta}}
+    </div>
   </div>
 </section>
 
+<!-- 7 · Domande sull'associazione — richiesta dell'utente -->
+<section class="ssf-section">
+  <div class="ssf-container ssf-faq-doppia">
+    <div>
+      <p class="ssf-occhiello">[Occhiello]</p>
+      <h2 class="ssf-h2">[Titolo — domande su di noi]</h2>
+    </div>
+    <div class="ssf-faq">
+      <details open><summary>[Domanda — che differenza c'è con la scherma olimpica?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 3}}</div></details>
+      <details><summary>[Domanda — fate rievocazione storica?]</summary><div><p class="ph-testo">[Risposta — no: pratichiamo un'arte marziale, fondata sulle fonti]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — su quale trattato studiate?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — gareggiare è obbligatorio?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — a quale ente siete affiliati?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · Chiusura -->
 <section class="ssf-section ssf-section--steel ssf-chiusura">
   <div class="ssf-container">
     <h2 class="ssf-h2" style="margin-top:0">[Titolo — vieni ad allenarti, il resto viene da sé]</h2>

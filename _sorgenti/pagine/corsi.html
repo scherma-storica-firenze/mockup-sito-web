@@ -1,43 +1,42 @@
 <!-- titolo: Corsi | voce: corsi -->
-<!-- Mappa §3.2 · la pagina della decisione: cosa, come si comincia, quando, quanto costa, i dubbi -->
-<section class="ssf-section ssf-section--steel">
-  <div class="ssf-container ssf-affiancati">
-    <div>
+<!-- Mappa §3.2 · la pagina della decisione: cosa, come si comincia, quando, quanto costa, i dubbi.
+     Nessuna foto di location: la pagina dice dove ci si allena -->
+
+<!-- 1 · BANDA: la prima sera, volto scoperto, palestra -->
+<section class="ssf-banda">
+  {{foto sfondo/16x9 | Immagine 2 di [3.6] · qualcuno alla prima sera, spada in mano, accanto all'istruttore · volto scoperto · palestra}}
+  <div class="ssf-container">
+    <div class="ssf-banda__testo">
       <p class="ssf-occhiello">[Occhiello]</p>
       <h1 class="ssf-h1">[Titolo — scherma storica a Firenze: dove ti porta il percorso]</h1>
-      <p class="ssf-sub ph-testo">[Sottotitolo — come ci si arriva: dalla prima guardia al combattimento, un livello alla volta]</p>
+      <p class="ph-testo">[Sottotitolo — dalla prima guardia al combattimento, un livello alla volta]</p>
     </div>
-    {{foto 3x2 | Immagine 4 di [3.6] · l'istruttore corregge una guardia con la mano · palestra}}
   </div>
 </section>
 
-<!-- 2 · Come si comincia: I Tre Allenamenti, la garanzia sul primo passo -->
-<section class="ssf-section">
-  <div class="ssf-container ssf-affiancati">
-    <div>
+<!-- 2 · Come si comincia: I Tre Allenamenti, la garanzia sul primo passo — CENTRATO, in cornice -->
+<section class="ssf-section ssf-centro">
+  <div class="ssf-container">
+    <div class="ssf-intestazione">
       <p class="ssf-occhiello">I Tre Allenamenti</p>
       <h2 class="ssf-h2">[Titolo — come si comincia: tre allenamenti gratuiti per capire se fa per te]</h2>
-      <div class="ssf-cornice">
-        <div>
-          <p class="ssf-cornice__titolo">[Garanzia sul primo passo]</p>
-          <ul class="ssf-livelli" style="margin-top:0">
-            <li><span class="ph-testo">[L'attrezzatura è nostra]</span></li>
-            <li><span class="ph-testo">[Vieni con abiti comodi]</span></li>
-            <li><span class="ph-testo">[Non serve il certificato medico]</span></li>
-            <li><span class="ph-testo">[La sera, dalle 21 alle 23]</span></li>
-            <li><span class="ph-testo">[Dopo tre allenamenti decidi tu]</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="ssf-azioni" style="margin-top:var(--ssf-space-32)">
-        <a class="ssf-btn ssf-btn--primary" href="contatti.html">Prenota il primo dei tre allenamenti gratuiti</a>
+    </div>
+    <div class="ssf-cornice" style="margin:var(--ssf-space-32) auto 0;max-width:52rem">
+      <div class="ssf-info" style="margin-top:0;text-align:left">
+        <div><h3 class="ssf-h5">[L'attrezzatura è nostra]</h3></div>
+        <div><h3 class="ssf-h5">[Vieni con abiti comodi]</h3></div>
+        <div><h3 class="ssf-h5">[Non serve il certificato medico]</h3></div>
+        <div><h3 class="ssf-h5">[La sera, dalle 21 alle 23]</h3></div>
+        <div><h3 class="ssf-h5">[Dopo tre allenamenti decidi tu]</h3></div>
       </div>
     </div>
-    {{foto 4x5 | Immagine 2 di [3.6] · qualcuno alla prima sera, spada in mano, accanto all'istruttore · volto scoperto · palestra}}
+    <div class="ssf-azioni" style="margin-top:var(--ssf-space-32)">
+      <a class="ssf-btn ssf-btn--primary" href="contatti.html">Prenota il primo dei tre allenamenti gratuiti</a>
+    </div>
   </div>
 </section>
 
-<!-- 3 · Il percorso principale -->
+<!-- 3 · Il percorso principale — carta · PERCORSO A TAPPE -->
 <section class="ssf-section ssf-section--paper" id="spada-a-due-mani">
   {{giglio}}
   <div class="ssf-container">
@@ -45,85 +44,86 @@
       <p class="ssf-occhiello">[Occhiello — il corso]</p>
       <h2 class="ssf-h2">Spada a Due Mani</h2>
       <p class="ph-testo">[Paragrafo — cosa impari, detto come beneficio. «Si entra dalla prima guardia»]</p>
-      {{righe 3}}
     </div>
-    <ul class="ssf-livelli">
-      <li><strong>Spada a Due Mani · I</strong><span class="ph-testo">[Una riga: cosa sai fare alla fine del livello]</span></li>
-      <li><strong>Spada a Due Mani · II</strong><span class="ph-testo">[Una riga: cosa sai fare alla fine del livello]</span></li>
-      <li><strong>Spada a Due Mani · III</strong><span class="ph-testo">[Una riga: cosa sai fare alla fine del livello]</span></li>
-      <li><strong>Spada a Due Mani · IV</strong><span class="ph-testo">[Una riga: cosa sai fare alla fine del livello]</span></li>
-    </ul>
+    <ol class="ssf-percorso">
+      <li><strong>Spada a Due Mani · I</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
+      <li><strong>Spada a Due Mani · II</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
+      <li><strong>Spada a Due Mani · III</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
+      <li><strong>Spada a Due Mani · IV</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
+    </ol>
   </div>
 </section>
 
-<!-- 4 · HEMA in Armis e moduli -->
-<section class="ssf-section">
+<!-- 4 · HEMA in Armis — ASIMMETRICO; i moduli sotto, su una riga -->
+<section class="ssf-section" id="hema-in-armis">
   <div class="ssf-container">
-    <div class="ssf-griglia">
-      <div id="hema-in-armis">
-        {{foto 3x2 | Immagine 8 di [3.6] · HEMA in Armis, in gara · archivio}}
-        <h2 class="ssf-h3">HEMA in Armis</h2>
+    <div class="ssf-asimmetrico ssf-asimmetrico--inverso">
+      {{foto 16x9 | Immagine 8 di [3.6] · HEMA in Armis, in armatura, in gara · archivio}}
+      <div class="ssf-asimmetrico__testo">
+        <p class="ssf-occhiello">[Occhiello]</p>
+        <h2 class="ssf-h2">HEMA in Armis</h2>
         <p class="ph-testo">[Paragrafo — la scherma storica in armatura, e per chi è]</p>
         {{righe 3}}
       </div>
-      <div id="moduli">
-        {{foto 3x2 | Immagine 10 di [3.6] · mani sull'impugnatura, dettaglio}}
-        <h2 class="ssf-h3">Modulo · Striscia e Modulo · Sciabola</h2>
-        <p class="ph-testo">[Paragrafo — cosa sono; aperti ai soci dal livello II]</p>
-        {{righe 3}}
-      </div>
+    </div>
+    <div class="ssf-faq-doppia" id="moduli" style="margin-top:var(--ssf-space-64)">
+      <h2 class="ssf-h3" style="margin-top:0">Modulo · Striscia e Modulo · Sciabola</h2>
+      <div><p class="ph-testo">[Paragrafo — cosa sono; aperti ai soci dal livello II]</p>{{righe 2}}</div>
     </div>
   </div>
 </section>
 
-<!-- 5 · Quando e dove -->
-<section class="ssf-section ssf-section--alt">
-  <div class="ssf-container ssf-affiancati">
-    <div>
-      <p class="ssf-occhiello">[Occhiello]</p>
-      <h2 class="ssf-h2">[Titolo — quando e dove]</h2>
-      <p class="ph-testo">[Le sere di allenamento · dalle 21 alle 23, e perché la sera]</p>
-      <p class="ph-testo">[La sede]</p>
-      <a class="ssf-link-solo" href="contatti.html#dove">Come arrivare</a>
-    </div>
-    {{foto 3x2 | Immagine 9 di [3.6] · la palestra la sera, luci accese, il gruppo che si scalda}}
-  </div>
-</section>
-
-<!-- 6 · Quanto costa — sezione al posto della pagina Costi (decisione dell'utente) -->
-<section class="ssf-section" id="costi">
-  <div class="ssf-container ssf-affiancati">
-    <div>
-      <p class="ssf-occhiello">[Occhiello — quanto costa]</p>
-      <h2 class="ssf-h2">[Titolo — quanto costa, tutto in chiaro]</h2>
-      <p class="ph-testo">[Paragrafo — prima ciò che è gratis, poi le voci, senza sorprese]</p>
-      <dl class="ssf-importi">
-        <div><dt>[I tre allenamenti]</dt><dd>[gratuiti]</dd></div>
-        <div><dt>[L'attrezzatura per iniziare]</dt><dd>[inclusa]</dd></div>
-        <div><dt>[Quota associativa e tesseramento]</dt><dd>[importo]</dd></div>
-        <div><dt>[Quota del corso]</dt><dd>[importo · periodo]</dd></div>
-        <div><dt>[Certificato medico, all'iscrizione]</dt><dd>[a carico tuo]</dd></div>
-        <div><dt>[Attrezzatura propria, facoltativa]</dt><dd>[col tempo]</dd></div>
-      </dl>
-    </div>
-    {{foto 3x2 | Immagine 6 di [3.6] · l'attrezzatura dell'associazione, in ordine, pronta per chi arriva}}
-  </div>
-</section>
-
-<!-- 7 · Le domande: obiezioni, mai prezzo o offerta -->
+<!-- 5 · Quando e dove — STRISCIA DI INFORMAZIONI + foto in fascia -->
 <section class="ssf-section ssf-section--alt">
   <div class="ssf-container">
     <div class="ssf-intestazione">
       <p class="ssf-occhiello">[Occhiello]</p>
-      <h2 class="ssf-h2">[Titolo — le domande che ci fanno tutti]</h2>
+      <h2 class="ssf-h2">[Titolo — quando e dove]</h2>
+    </div>
+    <div class="ssf-info">
+      <div><h3 class="ssf-h5">Quando</h3><p class="ph-testo">[Le sere · dalle 21 alle 23, e perché la sera]</p></div>
+      <div><h3 class="ssf-h5">Dove</h3><p class="ph-testo">[La sede]</p></div>
+      <div><h3 class="ssf-h5">Come arrivare</h3><p class="ph-testo">[Mezzi e parcheggio]</p><a class="ssf-link-solo" href="contatti.html#dove">Mappa e indicazioni</a></div>
+    </div>
+    <div style="margin-top:var(--ssf-space-32)">{{foto 3x1 | Immagine 9 di [3.6] · la palestra la sera, luci accese, il gruppo che si scalda}}</div>
+  </div>
+</section>
+
+<!-- 6 · Quanto costa — LISTINO CENTRATO. Prima ciò che è gratis -->
+<section class="ssf-section" id="costi">
+  <div class="ssf-container ssf-listino">
+    <div class="ssf-centro">
+      <p class="ssf-occhiello">[Occhiello — quanto costa]</p>
+      <h2 class="ssf-h2">[Titolo — quanto costa, tutto in chiaro]</h2>
+    </div>
+    {{foto 3x1 | Immagine 6 di [3.6] · l'attrezzatura dell'associazione, pronta per chi arriva}}
+    <dl class="ssf-importi">
+      <div><dt>[I tre allenamenti]</dt><dd>[gratuiti]</dd></div>
+      <div><dt>[L'attrezzatura per iniziare]</dt><dd>[inclusa]</dd></div>
+      <div><dt>[Quota associativa e tesseramento]</dt><dd>[importo]</dd></div>
+      <div><dt>[Quota del corso]</dt><dd>[importo · periodo]</dd></div>
+      <div><dt>[Certificato medico, all'iscrizione]</dt><dd>[a carico tuo]</dd></div>
+      <div><dt>[Attrezzatura propria, facoltativa]</dt><dd>[col tempo]</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 7 · Domande sui corsi — richiesta dell'utente. Le paure stanno in Home: qui le domande pratiche -->
+<section class="ssf-section ssf-section--paper">
+  {{giglio}}
+  <div class="ssf-container ssf-faq-doppia">
+    <div>
+      <p class="ssf-occhiello">[Occhiello]</p>
+      <h2 class="ssf-h2">[Titolo — domande sui corsi]</h2>
+      <p class="ph-testo">[Una riga: le paure di chi comincia sono in Home]</p>
+      <a class="ssf-link-solo" href="index.html">Le domande di chi comincia</a>
     </div>
     <div class="ssf-faq">
-      <details open><summary>[Domanda — la paura del contatto: «fa male?»]</summary><div><p class="ph-testo">[Risposta — protezioni complete e regole precise]</p>{{righe 3}}</div></details>
-      <details><summary>[Domanda — la fatica]</summary><div><p class="ph-testo">[Risposta — «è faticoso, non ti diremo il contrario»]</p>{{righe 2}}</div></details>
-      <details><summary>[Domanda — «non ho mai fatto sport»]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
-      <details><summary>[Domanda — «vengo da un'altra arte marziale: riparto da zero?»]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
-      <details><summary>[Domanda — perché vi allenate la sera tardi?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
-      <details><summary>[Domanda — «sarò l'unico principiante?»]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details open><summary>[Domanda — posso cominciare in qualsiasi momento dell'anno?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — quante sere a settimana?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — quanto dura un livello?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — c'è un'età minima o massima?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — quando conviene comprare l'attrezzatura propria?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
     </div>
   </div>
 </section>
@@ -132,9 +132,8 @@
 <section class="ssf-section ssf-section--steel ssf-chiusura">
   {{giglio}}
   <div class="ssf-container">
-    <div class="ssf-card" style="max-width:36rem;margin-inline:auto;text-align:left">
-      <p class="ph-testo">[Testimonianza — chi è arrivato senza esperienza · da procurare]</p>
-      {{righe 3}}
+    <div class="ssf-dichiarazione">
+      <p class="ssf-dichiarazione__frase">[Testimonianza — chi è arrivato senza esperienza · da procurare]</p>
       <p class="ssf-caption">[Nome · da quanto si allena]</p>
     </div>
     <div class="ssf-azioni" style="margin-top:var(--ssf-space-48)">

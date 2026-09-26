@@ -1,5 +1,7 @@
 <!-- titolo: Eventi | voce: eventi -->
 <!-- Mappa §3.5 · ogni voce porta alla pagina dell'evento; l'archivio resta, anno per anno -->
+
+<!-- 1 · Titolo, e accanto IL PROSSIMO EVENTO IN EVIDENZA -->
 <section class="ssf-section ssf-section--steel">
   <div class="ssf-container ssf-affiancati">
     <div>
@@ -7,17 +9,20 @@
       <h1 class="ssf-h1">[Titolo — eventi di scherma storica a Firenze]</h1>
       <p class="ssf-sub ph-testo">[Sottotitolo — sparring, seminari, tornei: cosa succede oltre all'allenamento]</p>
     </div>
-    {{foto 3x2 | Immagine 8 di [3.6] · una tappa del circuito, in gara · archivio}}
+    <a class="ssf-card ssf-card--link" href="evento-in-programma.html">
+      {{foto 16x9 | Immagine 8 di [3.6] · il formato dell'evento}}
+      <p class="ssf-eyebrow">Il prossimo evento · [gg mese]</p>
+      <h2 class="ssf-h3" style="margin-top:0">Sparring Night</h2>
+      <p class="ph-testo">[Luogo · una riga: allenamento aperto con altre sale]</p>
+      <span class="ssf-card__vai">Tutti i dettagli →</span>
+    </a>
   </div>
 </section>
 
+<!-- 2 · Prossimi eventi — elenco -->
 <section class="ssf-section">
   <div class="ssf-container">
-    <h2 class="ssf-h2">[Titolo — i prossimi eventi]</h2>
-    <a class="ssf-event" href="evento-in-programma.html">
-      <span class="ssf-event__date">[gg mese]</span>
-      <span><span class="ssf-event__titolo">Sparring Night</span><br><span class="ph-testo">[Luogo · una riga: allenamento aperto con altre sale]</span></span>
-    </a>
+    <h2 class="ssf-h2">[Titolo — in programma]</h2>
     <a class="ssf-event" href="evento-in-programma.html">
       <span class="ssf-event__date">[gg mese]</span>
       <span><span class="ssf-event__titolo">Seminario di [disciplina]</span><br><span class="ph-testo">[Luogo · una riga: tema o relatore]</span></span>
@@ -29,22 +34,25 @@
   </div>
 </section>
 
+<!-- 3 · Che cosa sono — carta · QUATTRO FORMATI IN GRIGLIA + foto in fascia -->
 <section class="ssf-section ssf-section--paper">
   {{giglio}}
-  <div class="ssf-container ssf-affiancati">
-    <div>
+  <div class="ssf-container">
+    <div class="ssf-intestazione">
+      <p class="ssf-occhiello">[Occhiello]</p>
       <h2 class="ssf-h2">[Titolo — che cosa sono]</h2>
-      <ul class="ssf-livelli">
-        <li><strong>Sparring Night</strong><span class="ph-testo">[Una riga per chi non la conosce]</span></li>
-        <li><strong>Seminario di [disciplina]</strong><span class="ph-testo">[Una riga]</span></li>
-        <li><strong>Torneo SSF</strong><span class="ph-testo">[Una riga]</span></li>
-        <li><strong>[Tappe di circuito]</strong><span class="ph-testo">[Una riga]</span></li>
-      </ul>
     </div>
-    {{foto 3x2 | Immagine 11 di [3.6] · il gruppo}}
+    <div class="ssf-info">
+      <div><h3 class="ssf-h5">Sparring Night</h3><p class="ph-testo">[Una riga per chi non la conosce]</p></div>
+      <div><h3 class="ssf-h5">Seminario di [disciplina]</h3><p class="ph-testo">[Una riga]</p></div>
+      <div><h3 class="ssf-h5">Torneo SSF</h3><p class="ph-testo">[Una riga]</p></div>
+      <div><h3 class="ssf-h5">[Tappe di circuito]</h3><p class="ph-testo">[Una riga]</p></div>
+    </div>
+    <div style="margin-top:var(--ssf-space-32)">{{foto 3x1 | Immagine 11 di [3.6] · il gruppo}}</div>
   </div>
 </section>
 
+<!-- 4 · L'archivio, anno per anno -->
 <section class="ssf-section">
   <div class="ssf-container">
     <h2 class="ssf-h2">[Titolo — l'archivio]</h2>
@@ -62,6 +70,22 @@
       <span class="ssf-event__date">[gg mese]</span>
       <span><span class="ssf-event__titolo">Torneo SSF 2025</span><br><span class="ph-testo">[Luogo · com'è andata, in una riga]</span></span>
     </a>
+  </div>
+</section>
+
+<!-- 5 · Domande sugli eventi — richiesta dell'utente -->
+<section class="ssf-section ssf-section--alt">
+  <div class="ssf-container ssf-faq-doppia">
+    <div>
+      <p class="ssf-occhiello">[Occhiello]</p>
+      <h2 class="ssf-h2">[Titolo — domande sugli eventi]</h2>
+    </div>
+    <div class="ssf-faq">
+      <details open><summary>[Domanda — posso partecipare anche se non sono socio?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — posso venire solo a guardare?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — serve l'attrezzatura propria?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+      <details><summary>[Domanda — come ci si iscrive a un torneo?]</summary><div><p class="ph-testo">[Risposta]</p>{{righe 2}}</div></details>
+    </div>
   </div>
 </section>
 

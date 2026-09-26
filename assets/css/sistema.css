@@ -387,3 +387,119 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-wa:hover { background: #1EBE5A; }
 .ssf-wa svg { width: 26px; height: 26px; }
 @media (min-width: 1024px) { .ssf-wa { right: var(--ssf-space-32); bottom: var(--ssf-space-32); } }
+
+/* ---------- 5. Composizioni per variare il ritmo — richiesta dell'utente, 26/09 ----------
+   Nessuna animazione: la varieta' viene dalla forma delle sezioni, non dal movimento. */
+
+/* Banda: foto a tutta larghezza con il testo sopra (le «aperture di sezione» di [3.6]) */
+.ssf-banda { position: relative; overflow: clip; min-height: 30rem; display: flex; align-items: flex-end;
+  background: var(--ssf-bg-steel); }
+.ssf-banda > .ssf-container { padding-block: var(--ssf-space-96) var(--ssf-space-48); }
+.ssf-banda__testo { max-width: 38rem; background: rgba(10, 10, 10, .72); padding: var(--ssf-space-24);
+  border-left: 2px solid var(--ssf-border-accent); }
+.ssf-banda__testo > :last-child { margin-bottom: 0; }
+@media (min-width: 1024px) { .ssf-banda { min-height: 36rem; } .ssf-banda__testo { padding: var(--ssf-space-32); } }
+
+/* Dichiarazione: una frase grande, centrata, fra due divisori */
+.ssf-dichiarazione { text-align: center; max-width: 52rem; margin-inline: auto; }
+.ssf-dichiarazione__frase { font-family: var(--ssf-font-display); text-transform: uppercase;
+  font-size: var(--ssf-fs-h2); line-height: var(--ssf-lh-h2); letter-spacing: .04em;
+  color: var(--ssf-text-heading); margin: 0 0 var(--ssf-space-16); text-wrap: balance; }
+.ssf-dichiarazione .ph-testo, .ssf-dichiarazione .ph-righe { margin-inline: auto; }
+
+/* Asimmetrico: foto grande e riquadro di testo che la sormonta */
+.ssf-asimmetrico { display: grid; }
+.ssf-asimmetrico__testo { background: var(--ssf-bg-raised); box-shadow: var(--ssf-ring-hairline);
+  padding: var(--ssf-space-24); margin: calc(-1 * var(--ssf-space-48)) var(--ssf-space-16) 0; position: relative; }
+@media (min-width: 1024px) {
+  .ssf-asimmetrico { grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center; }
+  .ssf-asimmetrico > .ph { grid-column: 1 / 9; grid-row: 1; }
+  .ssf-asimmetrico__testo { grid-column: 7 / 13; grid-row: 1; margin: 0; padding: var(--ssf-space-40); }
+  .ssf-asimmetrico--inverso > .ph { grid-column: 5 / 13; }
+  .ssf-asimmetrico--inverso .ssf-asimmetrico__testo { grid-column: 1 / 7; }
+}
+
+/* Linea del tempo: verticale sul telefono, orizzontale su desktop */
+.ssf-tappe { list-style: none; padding: 0; margin: var(--ssf-space-40) 0 0; display: grid; gap: var(--ssf-space-24); }
+.ssf-tappe li { position: relative; padding-left: var(--ssf-space-32); }
+.ssf-tappe li::before { content: ""; position: absolute; left: 0; top: .35em; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--ssf-text-accent); }
+.ssf-tappe li::after { content: ""; position: absolute; left: 5px; top: 1.3em; bottom: calc(-1 * var(--ssf-space-24));
+  width: 2px; background: var(--ssf-border-default); }
+.ssf-tappe li:last-child::after { display: none; }
+.ssf-tappe strong { display: block; font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h4);
+  color: var(--ssf-text-heading); font-weight: var(--ssf-fw-medium); }
+@media (min-width: 1024px) {
+  .ssf-tappe { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--ssf-gutter); }
+  .ssf-tappe li { padding: var(--ssf-space-32) 0 0; }
+  .ssf-tappe li::before { top: 0; }
+  .ssf-tappe li::after { left: 12px; right: calc(-1 * var(--ssf-gutter)); top: 5px; bottom: auto; width: auto; height: 2px; }
+}
+
+/* Mosaico: una foto grande e due piccole */
+.ssf-mosaico { display: grid; gap: var(--ssf-space-12); margin-top: var(--ssf-space-32);
+  grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ssf-mosaico > :first-child { grid-column: 1 / -1; }
+@media (min-width: 768px) {
+  .ssf-mosaico { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; }
+  .ssf-mosaico > :first-child { grid-column: 1; grid-row: 1 / 3; height: 100%; aspect-ratio: auto; }
+}
+
+/* Percorso a tappe: i quattro livelli come un sentiero */
+.ssf-percorso { list-style: none; padding: 0; margin: var(--ssf-space-40) 0 0; display: grid; gap: var(--ssf-space-16);
+  counter-reset: livello; }
+.ssf-percorso li { counter-increment: livello; border: var(--ssf-border-width) solid var(--ssf-border-default);
+  padding: var(--ssf-space-24); position: relative; }
+.ssf-percorso li::before { content: counter(livello, upper-roman); display: block; font-family: var(--ssf-font-display);
+  font-size: var(--ssf-fs-h2); line-height: 1; color: var(--ssf-text-accent); margin-bottom: var(--ssf-space-12); }
+.ssf-percorso strong { display: block; font-weight: var(--ssf-fw-semibold); color: var(--ssf-text-heading); margin-bottom: var(--ssf-space-4); }
+@media (min-width: 1024px) {
+  .ssf-percorso { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+  .ssf-percorso li + li { border-left: 0; }
+  .ssf-percorso li:nth-child(2) { margin-top: var(--ssf-space-24); } .ssf-percorso li:nth-child(3) { margin-top: var(--ssf-space-48); }
+  .ssf-percorso li:nth-child(4) { margin-top: var(--ssf-space-64); }
+}
+
+/* Ritratti senza card */
+.ssf-profili { display: grid; gap: var(--ssf-space-32) var(--ssf-gutter); margin-top: var(--ssf-space-32);
+  grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* due per riga anche sul telefono */
+@media (min-width: 640px) { .ssf-profili { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ssf-profili .ph { margin-bottom: var(--ssf-space-12); }
+.ssf-profili p { margin: 0; }
+
+/* In evidenza: un elemento grande e due piccoli */
+.ssf-evidenza { display: grid; gap: var(--ssf-gutter); margin-top: var(--ssf-space-32); }
+@media (min-width: 1024px) {
+  .ssf-evidenza { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); grid-template-rows: auto auto; }
+  .ssf-evidenza > :first-child { grid-row: 1 / 3; }
+}
+
+/* Striscia di informazioni con icona */
+.ssf-info { display: grid; gap: var(--ssf-space-24); margin-top: var(--ssf-space-32);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+.ssf-info > div { border-top: 2px solid var(--ssf-border-accent); padding-top: var(--ssf-space-16); }
+.ssf-info .ic { width: 28px; height: 28px; margin-bottom: var(--ssf-space-8); }
+.ssf-info h3 { margin-top: 0; }
+
+/* Domande con il titolo a sinistra */
+.ssf-faq-doppia { display: grid; gap: var(--ssf-space-24); }
+@media (min-width: 1024px) { .ssf-faq-doppia { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--ssf-space-64); align-items: start; } }
+.ssf-faq-doppia .ssf-h2 { margin-top: 0; }
+
+/* Testo su due colonne, come la pagina di un libro */
+.ssf-colonne { columns: 1; column-gap: var(--ssf-space-48); margin-top: var(--ssf-space-32); }
+@media (min-width: 1024px) { .ssf-colonne { columns: 2; } }
+.ssf-colonne .ph-righe { break-inside: avoid; }
+
+/* Listino centrato */
+.ssf-listino { max-width: 40rem; margin-inline: auto; }
+.ssf-listino .ssf-importi { max-width: none; }
+
+.ssf-centro { text-align: center; }
+.ssf-centro .ssf-intestazione, .ssf-centro .ph-testo { margin-inline: auto; }
+.ssf-centro .ssf-azioni { justify-content: center; }
+.ssf-centro .ssf-occhiello { justify-content: center; }
+.ssf-testimone { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: var(--ssf-space-16); align-items: start; }
+.ssf-testimone .ph { padding: var(--ssf-space-4); }
+.ssf-testimone .ph figcaption { font-size: .6875rem; }
+@media (min-width: 1024px) { .ssf-profili { grid-template-columns: repeat(5, minmax(0, 1fr)); } }

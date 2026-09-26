@@ -45,3 +45,5 @@
 /* Collegamenti che nel mockup non portano da nessuna parte */
 .ph-finto { color: var(--ssf-text-secondary); text-decoration: underline dotted; cursor: default; }
 .ph-nota { font-size: var(--ssf-fs-caption); color: var(--ssf-text-secondary); font-style: italic; }
+/* Nella banda il testo sta in basso: l'etichetta della foto va in alto */
+.ssf-banda .ssf-hero__foto.ph { justify-content: flex-start; }
