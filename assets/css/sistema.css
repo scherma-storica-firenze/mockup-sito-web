@@ -118,12 +118,16 @@ p { margin: 0 0 var(--ssf-space-16); }
                     box-shadow: var(--ssf-glow-accent); }
 .ssf-btn--primary:hover  { background: var(--ssf-action-primary-bg-hover); }
 .ssf-btn--primary:active { background: var(--ssf-action-primary-bg-active); }
-.ssf-btn--secondary { background: transparent; color: var(--ssf-action-secondary-text);
-                      border: var(--ssf-border-width) solid var(--ssf-action-secondary-border);
-                      font-weight: var(--ssf-fw-medium); }
-.ssf-btn--secondary:hover { color: var(--ssf-action-secondary-text-hover);
-                            border-color: var(--ssf-action-secondary-border-hover); }
+/* Utente, 26/09 (U2, U10): cio' che si clicca e' in oro. Il secondario e' quindi contorno e
+   testo oro, e si riempie al passaggio; il pieno dorato resta la CTA dei tre allenamenti.
+   Supera [4.3] M4 (secondario argento). Sulla carta i token lo rendono nero da soli. */
+.ssf-btn--secondary { background: transparent; color: var(--ssf-text-accent);
+                      border: var(--ssf-border-width) solid var(--ssf-border-accent);
+                      font-weight: var(--ssf-fw-semibold); }
+.ssf-btn--secondary:hover { color: var(--ssf-action-primary-text); background: var(--ssf-action-primary-bg);
+                            border-color: var(--ssf-action-primary-bg); }
 .ssf-azioni { display: flex; flex-wrap: wrap; gap: var(--ssf-space-12); align-items: center; }
+.ssf-azioni--sopra { margin-top: var(--ssf-space-24); }
 
 .ssf-field { display: grid; gap: var(--ssf-space-8); margin-bottom: var(--ssf-space-24); }
 .ssf-field > label { font-size: var(--ssf-fs-label); font-weight: var(--ssf-fw-medium);

@@ -2,7 +2,7 @@
 <!-- Mappa §3.8 · modello di articolo; la tavola sta sulla sezione carta -->
 <section class="ssf-section ssf-section--steel">
   <div class="ssf-container ssf-prose-wide">
-    <a class="ssf-link-solo" href="blog.html">← Tutti gli articoli</a>
+    <div class="ssf-azioni"><a class="ssf-btn ssf-btn--secondary" href="blog.html">← Tutti gli articoli</a></div>
     <p class="ssf-eyebrow" style="margin-top:var(--ssf-space-16)">Per chi comincia · [data]</p>
     <h1 class="ssf-h1">[Titolo dell'articolo]</h1>
     <p class="ssf-sub ph-testo">[Sottotitolo — la risposta in una frase]</p>
@@ -38,8 +38,10 @@
     <p class="ph-testo">[Paragrafo di chiusura]</p>
     {{righe 4}}
     <h2 class="ssf-h5">Leggi anche</h2>
-    <a class="ssf-link-solo" href="blog-articolo.html">[Titolo di un articolo collegato]</a><br>
-    <a class="ssf-link-solo" href="blog-articolo.html">[Titolo di un altro articolo collegato]</a>
+    <div class="ssf-griglia" style="margin-top:var(--ssf-space-16)">
+      <a class="ssf-card ssf-card--link" href="blog-articolo.html"><p class="ssf-eyebrow">Per chi comincia</p><h3 class="ssf-h5" style="margin-top:0">[Titolo di un articolo collegato]</h3><span class="ssf-card__vai">Leggi →</span></a>
+      <a class="ssf-card ssf-card--link" href="blog-articolo.html"><p class="ssf-eyebrow">Approfondimenti</p><h3 class="ssf-h5" style="margin-top:0">[Titolo di un altro articolo collegato]</h3><span class="ssf-card__vai">Leggi →</span></a>
+    </div>
   </div>
 </section>
 
