@@ -338,7 +338,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-passi li { counter-increment: passo; border-top: var(--ssf-border-width) solid var(--ssf-border-default);
                 padding-top: var(--ssf-space-16); }
 .ssf-passi li::before { content: counter(passo, upper-roman); display: block;
-  font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h4); color: var(--ssf-text-accent);
+  font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h4); color: var(--ssf-text-heading);
   margin-bottom: var(--ssf-space-8); }
 
 .ssf-importi { margin: var(--ssf-space-32) 0 0; max-width: 40rem; }
@@ -367,10 +367,12 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
   border-block: var(--ssf-border-width) solid var(--ssf-border-default); }
 .ssf-numeri__elenco { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--ssf-space-24) var(--ssf-gutter); margin: 0; text-align: center; }
-@media (min-width: 768px) { .ssf-numeri__elenco { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 768px) { .ssf-numeri__elenco { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+  .ssf-numeri__elenco > div { padding-inline: var(--ssf-space-16); }
+  .ssf-numeri__elenco > div + div { border-left: 1px solid var(--ssf-border-default); } }
 .ssf-numeri__elenco > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: var(--ssf-space-4); }
 .ssf-numeri__elenco dd { margin: 0; font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h2);
-  font-weight: var(--ssf-fw-semibold); line-height: 1; color: var(--ssf-text-accent); }   /* oro-segno */
+  font-weight: var(--ssf-fw-semibold); line-height: 1; color: var(--ssf-text-heading); }
 .ssf-numeri__elenco dt { font-size: var(--ssf-fs-body-s); line-height: var(--ssf-lh-body-s);
   color: var(--ssf-text-secondary); }
 
@@ -400,7 +402,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
   background: var(--ssf-bg-steel); }
 .ssf-banda > .ssf-container { padding-block: var(--ssf-space-96) var(--ssf-space-48); }
 .ssf-banda__testo { max-width: 38rem; background: rgba(10, 10, 10, .72); padding: var(--ssf-space-24);
-  border-left: 2px solid var(--ssf-border-accent); }
+}
 .ssf-banda__testo > :last-child { margin-bottom: 0; }
 @media (min-width: 1024px) { .ssf-banda { min-height: 36rem; } .ssf-banda__testo { padding: var(--ssf-space-32); } }
 
@@ -427,7 +429,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-tappe { list-style: none; padding: 0; margin: var(--ssf-space-40) 0 0; display: grid; gap: var(--ssf-space-24); }
 .ssf-tappe li { position: relative; padding-left: var(--ssf-space-32); }
 .ssf-tappe li::before { content: ""; position: absolute; left: 0; top: .35em; width: 12px; height: 12px;
-  border-radius: 50%; background: var(--ssf-text-accent); }
+  border-radius: 50%; background: var(--ssf-text-heading); }
 .ssf-tappe li::after { content: ""; position: absolute; left: 5px; top: 1.3em; bottom: calc(-1 * var(--ssf-space-24));
   width: 2px; background: var(--ssf-border-default); }
 .ssf-tappe li:last-child::after { display: none; }
@@ -455,7 +457,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-percorso li { counter-increment: livello; border: var(--ssf-border-width) solid var(--ssf-border-default);
   padding: var(--ssf-space-24); position: relative; }
 .ssf-percorso li::before { content: counter(livello, upper-roman); display: block; font-family: var(--ssf-font-display);
-  font-size: var(--ssf-fs-h2); line-height: 1; color: var(--ssf-text-accent); margin-bottom: var(--ssf-space-12); }
+  font-size: var(--ssf-fs-h2); line-height: 1; color: var(--ssf-text-heading); margin-bottom: var(--ssf-space-12); }
 .ssf-percorso strong { display: block; font-weight: var(--ssf-fw-semibold); color: var(--ssf-text-heading); margin-bottom: var(--ssf-space-4); }
 @media (min-width: 1024px) {
   .ssf-percorso { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
@@ -481,7 +483,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 /* Striscia di informazioni con icona */
 .ssf-info { display: grid; gap: var(--ssf-space-24); margin-top: var(--ssf-space-32);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
-.ssf-info > div { border-top: 2px solid var(--ssf-border-accent); padding-top: var(--ssf-space-16); }
+.ssf-info > div { border-top: 1px solid var(--ssf-border-strong); padding-top: var(--ssf-space-16); }
 .ssf-info .ic { width: 28px; height: 28px; margin-bottom: var(--ssf-space-8); }
 .ssf-info h3 { margin-top: 0; }
 
@@ -507,3 +509,13 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-testimone .ph { padding: var(--ssf-space-4); }
 .ssf-testimone .ph figcaption { font-size: .6875rem; }
 @media (min-width: 1024px) { .ssf-profili { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+/* ---------- 6. Revisione estetica (skill frontend-design), 26/09 ---------- */
+/* Tolti gli occhielli vuoti: il titolo che apre un blocco non riprende il margine alto */
+:is(.ssf-banda__testo, .ssf-asimmetrico__testo, .ssf-faq-doppia > div, .ssf-affiancati > div,
+    .ssf-intestazione, .ssf-dichiarazione) > :is(.ssf-h1, .ssf-h2, .ssf-h3):first-child { margin-top: 0; }
+
+/* Card orizzontale: immagine piccola a sinistra, testo a destra (i corsi secondari in evidenza) */
+.ssf-card--orizzontale { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--ssf-space-16);
+  align-items: start; }
+.ssf-card.ssf-card--orizzontale > .ph { margin-bottom: 0; }
