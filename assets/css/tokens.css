@@ -133,6 +133,11 @@
   --ssf-glow-accent:   0 0 0 1px rgba(201, 168, 76, 0.45),
                        0 0 20px rgba(201, 168, 76, 0.15);
   --ssf-scrim:         rgba(10, 10, 10, 0.78);
+  /* Velo sotto il testo che sta sopra una foto: apertura e fasce fotografiche.
+     All'85% ogni testo del sistema resta sopra 4,5:1 anche su una foto bianca
+     (secondario 4,8:1, oro 5,9:1). Al 72% il secondario scendeva a 3,7:1 su una
+     foto chiara. [3.6] §12 e [4.1], modifica del 27/09/2026 */
+  --ssf-scrim-photo:   rgba(10, 10, 10, 0.85);
 
   /* --- 11. OPACITA' --------------------------------------- */
   --ssf-opacity-hover-veil: 0.06;
@@ -184,7 +189,10 @@
   --ssf-fs-display: clamp(2.5rem,   1.687rem + 3.61vw,  4rem);
   --ssf-fs-h1:      clamp(2rem,     1.458rem + 2.41vw,  3rem);
   --ssf-fs-h2:      clamp(1.75rem,  1.479rem + 1.20vw,  2.25rem);
-  --ssf-fs-h3:      clamp(1.5rem,   1.364rem + 0.602vw, 1.75rem);
+  /* H3 fisso a 28px dal 27/09: Cinzel non scende mai sotto i 28px, nemmeno
+     sul telefono ([3.3] §9.2, modifica M1). Era clamp(1.5rem ... 1.75rem),
+     cioe' 24px sul telefono: sotto la soglia che lo stesso [3.3] fissa. */
+  --ssf-fs-h3:      1.75rem;
   --ssf-fs-h4:      clamp(1.25rem,  1.182rem + 0.301vw, 1.375rem);
   --ssf-fs-h5:      clamp(1.125rem, 1.091rem + 0.151vw, 1.1875rem);
   --ssf-fs-lead:    clamp(1.125rem, 1.057rem + 0.301vw, 1.25rem);
@@ -253,7 +261,9 @@
   --ssf-bg-paper:
   /* Quattro macchie morbide agli angoli, non una fascia.
     Ogni angolo ha tre fermate: la caduta e' graduale, non lineare.
-  L'angolo basso-destra e' il piu' carico, come nella grafica social. */
+  L'angolo basso-destra e' il piu' carico, come nella grafica social.
+  Dal 27/09 lo e' il 30% in meno ([3.2] M6): sopra la filigrana il testo
+  scendeva a 4,0:1 nel punto peggiore. Resta l'angolo piu' scuro dei quattro. */
   radial-gradient(48% 64% at 0% 0%,
   rgba(10,10,10,.115) 0%, rgba(10,10,10,.042) 46%, rgba(10,10,10,0) 80%),
   radial-gradient(48% 64% at 100% 0%,
@@ -261,7 +271,7 @@
   radial-gradient(52% 68% at 0% 100%,
   rgba(10,10,10,.10) 0%, rgba(10,10,10,.038) 46%, rgba(10,10,10,0) 80%),
   radial-gradient(58% 74% at 100% 100%,
-  rgba(10,10,10,.25) 0%, rgba(10,10,10,.095) 46%, rgba(10,10,10,0) 82%),
+  rgba(10,10,10,.175) 0%, rgba(10,10,10,.067) 46%, rgba(10,10,10,0) 82%),
   linear-gradient(135deg, #EAEAEA 0%, #E3E3E3 42%, #D4D4D4 100%);
 
   /* --- 17. MOTION — da [4.5] ------------------------------ */
@@ -303,9 +313,11 @@
   /* DUE livelli di testo, non tre. [4.5] §9.4:
      #5A5A5A regge il 4,5:1 solo su fondo piu' chiaro di #D1D1D1,
      e il gradiente della carta finisce a #D4D4D4.               */
-  --ssf-text-heading:   #0A0A0A;   /* 16,5:1 chiaro -> 7,8:1 angolo */
+  --ssf-text-heading:   #0A0A0A;   /* 16,2:1 chiaro -> 9,9:1 punto peggiore
+                                      del testo, 8,4:1 sopra la filigrana (27/09) */
   --ssf-text-lead:      #0A0A0A;
-  --ssf-text-primary:   #3D3D3D;   /*  9,0:1 chiaro -> 6,0:1 ombra  */
+  --ssf-text-primary:   #3D3D3D;   /*  8,9:1 chiaro -> 5,4:1 punto peggiore
+                                      del testo, 4,6:1 sopra la filigrana (27/09) */
   --ssf-text-secondary: #3D3D3D;   /* era #5A5A5A: sotto AA         */
   --ssf-text-meta:      #3D3D3D;   /* era #5A5A5A: sotto AA         */
   --ssf-text-accent:    #0A0A0A;   /* l'oro su carta: 1,90 - 1,54:1 */

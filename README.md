@@ -9,7 +9,9 @@ si arriva a chiedere i tre allenamenti gratuiti.
 
 ## Come è fatto
 
-- HTML e CSS statici, niente JavaScript. Menu del telefono e domande si aprono con `<details>`.
+- HTML e CSS statici. Menu del telefono e domande si aprono con `<details>`. Un solo script,
+  `assets/js/barra.js` (revisione del 27/09, R21): quando un bottone dorato del contenuto è in vista,
+  il bottone della barra passa al contorno dorato. Senza JavaScript resta pieno.
 - `assets/css/tokens.css` è la copia dei token del brand, da non modificare. Se i token cambiano, si
   ricopia da `Sito Web/Brand Identity/verifiche/tokens.css`.
 - `assets/css/sistema.css` contiene griglia, tipografia e componenti del design system ([4.2],

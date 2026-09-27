@@ -1,4 +1,4 @@
-<!-- titolo: Corsi | voce: corsi -->
+<!-- titolo: Corsi e costi | voce: corsi -->
 <!-- Mappa §3.2 · la pagina della decisione: cosa, come si comincia, quando, quanto costa, i dubbi.
      Nessuna foto di location: la pagina dice dove ci si allena -->
 
@@ -13,14 +13,14 @@
   </div>
 </section>
 
-<!-- 2 · Come si comincia: I Tre Allenamenti, la garanzia sul primo passo — CENTRATO, in cornice -->
-<section class="ssf-section ssf-centro">
+<!-- 2 · Come si comincia: I Tre Allenamenti, la garanzia sul primo passo — in cornice, a sinistra (revisione del 27/09) -->
+<section class="ssf-section">
   <div class="ssf-container">
     <div class="ssf-intestazione">
       <p class="ssf-occhiello">I Tre Allenamenti</p>
       <h2 class="ssf-h2">[Titolo — come si comincia: tre allenamenti gratuiti per capire se fa per te]</h2>
     </div>
-    <div class="ssf-cornice" style="margin:var(--ssf-space-32) auto 0;max-width:52rem">
+    <div class="ssf-cornice" style="margin-top:var(--ssf-space-32);max-width:52rem">
       <div class="ssf-info" style="margin-top:0;text-align:left">
         <div><h3 class="ssf-h5">[L'attrezzatura è nostra]</h3></div>
         <div><h3 class="ssf-h5">[Vieni con abiti comodi]</h3></div>
@@ -35,7 +35,10 @@
   </div>
 </section>
 
-<!-- 3 · Il percorso principale — carta · PERCORSO A TAPPE -->
+<!-- 3 · Il percorso principale e i suoi livelli — carta · TABELLA. I livelli compaiono una volta sola
+     (revisione del 27/09, R4: prima c'erano un percorso a tappe e, subito sotto, una tabella con gli
+     stessi quattro livelli). «Cosa si impara» = i sottotitoli ufficiali di [2.2] §2.1; «dal livello II»
+     i moduli = [2.2] §2.3. Il resto non e' nel materiale: da confermare -->
 <section class="ssf-section ssf-section--paper" id="spada-a-due-mani">
   {{giglio}}
   <div class="ssf-container">
@@ -43,27 +46,9 @@
       <p class="ssf-occhiello">[Occhiello — il corso]</p>
       <h2 class="ssf-h2">Spada a Due Mani</h2>
       <p class="ph-testo">[Paragrafo — cosa impari, detto come beneficio. «Si entra dalla prima guardia»]</p>
-    </div>
-    <ol class="ssf-percorso">
-      <li><strong>Spada a Due Mani · I</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
-      <li><strong>Spada a Due Mani · II</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
-      <li><strong>Spada a Due Mani · III</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
-      <li><strong>Spada a Due Mani · IV</strong><span class="ph-testo">[Cosa sai fare alla fine del livello]</span></li>
-    </ol>
-  </div>
-</section>
-
-<!-- 3b · Come funziona la divisione in livelli — richiesta dell'utente · TABELLA.
-     «Cosa si impara» = i sottotitoli ufficiali di [2.2] §2.1; «dal livello II» i moduli = [2.2] §2.3.
-     Il resto non e' nel materiale: da confermare -->
-<section class="ssf-section ssf-section--alt" id="livelli">
-  <div class="ssf-container">
-    <div class="ssf-intestazione">
-      <p class="ssf-occhiello">I livelli</p>
-      <h2 class="ssf-h2">[Titolo — come funziona la divisione in livelli]</h2>
       <p class="ph-testo">[Paragrafo — perché il percorso è diviso in quattro livelli: ognuno ha un obiettivo, e si passa al successivo quando lo si è raggiunto]</p>
     </div>
-    <table class="ssf-tabella">
+    <table class="ssf-tabella" id="livelli">
       <thead><tr><th scope="col">Livello</th><th scope="col">Cosa si impara</th><th scope="col">Cosa si apre</th><th scope="col">Durata indicativa</th></tr></thead>
       <tbody>
         <tr><th scope="row">I</th><td data-etichetta="Cosa si impara"><span class="ph-testo">[Fondamenti tecnici della spada a due mani]</span></td><td data-etichetta="Cosa si apre"><span class="ph-testo">[Si comincia tutti da qui]</span></td><td data-etichetta="Durata indicativa"><span class="ph-testo">[da definire]</span></td></tr>
@@ -128,10 +113,10 @@
   </div>
 </section>
 
-<!-- 6 · Quanto costa — LISTINO CENTRATO. Prima ciò che è gratis -->
+<!-- 6 · Quanto costa — LISTINO, a sinistra come i titoli (revisione del 27/09). Prima ciò che è gratis -->
 <section class="ssf-section ssf-section--alt" id="costi">
-  <div class="ssf-container ssf-listino">
-    <div class="ssf-centro">
+  <div class="ssf-container"><div class="ssf-listino">
+    <div class="ssf-intestazione">
       <p class="ssf-occhiello">[Occhiello — quanto costa]</p>
       <h2 class="ssf-h2">[Titolo — quanto costa, tutto in chiaro]</h2>
     </div>
@@ -144,7 +129,7 @@
       <div><dt>[Certificato medico, all'iscrizione]</dt><dd>[a carico tuo]</dd></div>
       <div><dt>[Attrezzatura propria, facoltativa]</dt><dd>[col tempo]</dd></div>
     </dl>
-  </div>
+  </div></div>
 </section>
 
 <!-- 7 · Domande sui corsi — richiesta dell'utente. Le paure stanno in Home: qui le domande pratiche -->

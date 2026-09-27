@@ -24,12 +24,12 @@ QUI = Path(__file__).resolve().parent
 SITO = QUI.parent
 ICONE = SITO / "assets" / "icons"
 
-VOCI = [("corsi.html", "Corsi", "corsi"),
+# Revisione del 27/09: «Corsi e costi», perche' i costi si trovino dal menu; Sponsor scende nel piede
+VOCI = [("corsi.html", "Corsi e costi", "corsi"),
         ("chi-siamo.html", "Chi siamo", "chi-siamo"),
         ("eventi.html", "Eventi", "eventi"),
         ("foto-e-video.html", "Foto e video", "foto-e-video"),
         ("blog.html", "Blog", "blog"),
-        ("sponsor.html", "Sponsor", "sponsor"),
         ("contatti.html", "Contatti", "contatti")]
 
 TIPI = {"foto": ("FOTO", "foto"), "video": ("VIDEO", "video"), "mappa": ("MAPPA", "mappa"),

@@ -47,6 +47,11 @@
 .ph-nota { font-size: var(--ssf-fs-caption); color: var(--ssf-text-secondary); font-style: italic; }
 /* Nella banda il testo sta in basso: l'etichetta della foto va in alto */
 .ssf-banda .ssf-hero__foto.ph { justify-content: flex-start; }
+/* Revisione del 27/09: sul telefono la foto della banda sta sopra il testo, ed e' un riquadro vero */
+@media (max-width: 1023px) {
+  .ssf-banda > .ssf-hero__foto.ph { height: auto; aspect-ratio: 3 / 2; background: var(--ssf-bg-raised);
+    border-color: var(--ssf-border-strong); justify-content: center; align-items: center; text-align: center; }
+}
 
 /* Segnaposto piccoli (ritratti delle testimonianze, card orizzontali): solo icona e parola chiave */
 :is(.ssf-testimone, .ssf-card--orizzontale) .ph { padding: var(--ssf-space-8); gap: var(--ssf-space-4); }

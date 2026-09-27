@@ -209,6 +209,14 @@ a.ssf-event .ssf-event__titolo { color: var(--ssf-text-accent); }
 /* Sul telefono: logo … [Prenota][menu]. Il [4.3] dava margine automatico
    a entrambi, e l'icona del menu finiva a meta' barra. */
 .ssf-nav > .ssf-btn { margin-inline-start: auto; padding-inline: var(--ssf-space-16); }
+/* R21, revisione del 27/09: il bottone della barra resta dorato, come chiesto dal committente (U1), ma e'
+   pieno solo quando nessun altro bottone dorato e' in vista. Quando uno lo e', la barra passa al contorno
+   dorato: cosi' in ogni schermata c'e' un solo oro-superficie ([3.2] M3.c). Lo decide assets/js/barra.js;
+   senza JavaScript il bottone resta pieno. Contorno con box-shadow e non con border: nessuno spostamento */
+.ssf-nav > .ssf-btn--primary.ssf-btn--in-attesa { background: transparent; color: var(--ssf-text-accent);
+  box-shadow: inset 0 0 0 var(--ssf-border-width) var(--ssf-border-accent); }
+.ssf-nav > .ssf-btn--primary.ssf-btn--in-attesa:hover { background: var(--ssf-action-primary-bg);
+  color: var(--ssf-action-primary-text); }
 .ssf-nav__menu { order: 3; }
 .ssf-nav__menu > summary { display: inline-flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; cursor: pointer; list-style: none; color: var(--ssf-text-primary); }
@@ -246,6 +254,8 @@ a.ssf-event .ssf-event__titolo { color: var(--ssf-text-accent); }
 .ssf-footer h2 { font-size: var(--ssf-fs-h6); letter-spacing: var(--ssf-ls-h6); text-transform: uppercase;
                  color: var(--ssf-text-secondary); margin-block: 0 var(--ssf-space-12); font-weight: var(--ssf-fw-medium); }
 .ssf-footer__elenco { display: grid; }
+/* Sul telefono i collegamenti vanno su due colonne: il piede era piu' lungo di una schermata (revisione del 27/09) */
+@media (max-width: 639px) { .ssf-footer__elenco { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--ssf-gutter); } }
 .ssf-footer__voce { display: inline-flex; align-items: center; min-height: 44px;
                     color: var(--ssf-text-primary); text-decoration: none; }
 .ssf-footer__voce:hover { color: var(--ssf-text-accent); }
@@ -260,8 +270,10 @@ a.ssf-event .ssf-event__titolo { color: var(--ssf-text-accent); }
              border-bottom: var(--ssf-border-width) solid var(--ssf-border-default);
              color: inherit; text-decoration: none; }
 a.ssf-event:hover { background: var(--ssf-bg-raised); }
-@media (min-width: 640px) { .ssf-event { grid-template-columns: 8rem 1fr; } }
-.ssf-event__date { font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h4);
+@media (min-width: 640px) { .ssf-event { grid-template-columns: 10rem 1fr; } }
+/* Data a 28px: Cinzel non scende sotto la soglia ([3.3] §9.2, revisione del 27/09). Misurata a 28px:
+   una data vera occupa al massimo 112px, il segnaposto «[gg mese]» 156px. La colonna da 10rem li tiene entrambi */
+.ssf-event__date { font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h3);
                    font-weight: var(--ssf-fw-medium); letter-spacing: .04em; text-transform: uppercase;
                    color: var(--ssf-text-heading); }
 .ssf-event--past .ssf-event__date { color: var(--ssf-text-secondary); }
@@ -290,7 +302,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-cornice { border: var(--ssf-frame-outer); padding: var(--ssf-frame-gap); max-width: 34rem; }
 .ssf-cornice > div { border: var(--ssf-frame-inner); padding: var(--ssf-space-24); }
 .ssf-cornice__titolo { font-family: var(--ssf-font-display); text-transform: uppercase;
-  letter-spacing: .08em; font-size: var(--ssf-fs-h4); font-weight: var(--ssf-fw-medium);
+  letter-spacing: .06em; font-size: var(--ssf-fs-h3); font-weight: var(--ssf-fw-medium); line-height: var(--ssf-lh-h3);
   color: var(--ssf-text-heading); margin: 0 0 var(--ssf-space-12); }
 
 .ssf-dropcap::first-letter { font-family: var(--ssf-font-display); font-weight: 500; font-size: 3.4em;
@@ -305,6 +317,17 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-hero > .ssf-container { padding-block: var(--ssf-space-24) var(--ssf-space-96); }
 @media (min-width: 1024px) { .ssf-hero > .ssf-container { padding-block: var(--ssf-space-96); } }
 .ssf-hero__foto { position: absolute; inset: 0; z-index: 0; margin: 0; }
+/* Velo fra la foto e il testo (revisione del 27/09, [3.6] §12): il testo sta sopra la foto solo dove
+   la foto e' scura, e il velo la rende tale. Da 1024px copre la colonna del testo e sfuma verso destra.
+   Sul telefono il testo occupa quasi tutta la prima schermata, e il velo lo segue: con una foto
+   d'apertura scura dal lato del testo si puo' alleggerire, verificando il punto peggiore */
+.ssf-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, var(--ssf-scrim-photo) 0%, var(--ssf-scrim-photo) 72%, transparent 100%); }
+@media (min-width: 1024px) {
+  .ssf-hero::before { background: linear-gradient(90deg, var(--ssf-scrim-photo) 0,
+    var(--ssf-scrim-photo) calc(max(0px, (100% - var(--ssf-container-max)) / 2) + var(--ssf-margin) + 40rem),
+    transparent calc(max(0px, (100% - var(--ssf-container-max)) / 2) + var(--ssf-margin) + 40rem + 22%)); }
+}
 .ssf-hero__testo { max-width: 40rem; }
 .ssf-preheadline { font-size: var(--ssf-fs-body); font-weight: var(--ssf-fw-regular);
                    color: var(--ssf-text-secondary); margin: 0 0 var(--ssf-space-12); }
@@ -322,6 +345,9 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 @media (min-width: 768px) { .ssf-tre { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .ssf-tre .ic { margin-bottom: var(--ssf-space-16); }
 
+/* Quattro elementi: due per riga, poi quattro. Niente elemento solo sull'ultima riga (revisione del 27/09) */
+@media (min-width: 640px) { .ssf-griglia:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .ssf-griglia:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .ssf-griglia { display: grid; gap: var(--ssf-gutter); margin-top: var(--ssf-space-32);
                grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .ssf-griglia--fitta { grid-template-columns: repeat(auto-fill, minmax(min(100%, 9rem), 1fr)); }
@@ -338,8 +364,8 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-passi li { counter-increment: passo; border-top: var(--ssf-border-width) solid var(--ssf-border-default);
                 padding-top: var(--ssf-space-16); }
 .ssf-passi li::before { content: counter(passo, upper-roman); display: block;
-  font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h4); color: var(--ssf-text-heading);
-  margin-bottom: var(--ssf-space-8); }
+  font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h3); line-height: 1; color: var(--ssf-text-heading);
+  margin-bottom: var(--ssf-space-12); }
 
 .ssf-importi { margin: var(--ssf-space-32) 0 0; max-width: 40rem; }
 .ssf-importi > div { display: flex; justify-content: space-between; gap: var(--ssf-space-16);
@@ -350,13 +376,19 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-livelli { list-style: none; padding: 0; margin: var(--ssf-space-24) 0 0; max-width: 44rem; }
 .ssf-livelli li { padding-block: var(--ssf-space-16); border-bottom: var(--ssf-border-width) solid var(--ssf-border-default); }
 .ssf-livelli strong { display: block; font-family: var(--ssf-font-display); text-transform: uppercase;
-  letter-spacing: .04em; color: var(--ssf-text-heading); font-weight: var(--ssf-fw-medium); }
+  font-size: var(--ssf-fs-h3); line-height: var(--ssf-lh-h3); letter-spacing: .04em;
+  color: var(--ssf-text-heading); font-weight: var(--ssf-fw-medium); margin-bottom: var(--ssf-space-4); }
 
-.ssf-chiusura { text-align: center; }
-.ssf-chiusura .ssf-intestazione, .ssf-chiusura .ssf-azioni { margin-inline: auto; justify-content: center; }
+/* Chiusura: allineata a sinistra; centrata solo da 1280px, dove il titolo sta su una riga
+   (revisione del 27/09: titoli a sinistra, centrati solo se stanno su una riga) */
 .ssf-chiusura .ssf-passi { text-align: left; }
-.ssf-tagline { font-family: var(--ssf-font-display); text-transform: uppercase; letter-spacing: .08em;
-  font-size: var(--ssf-fs-h4); color: var(--ssf-text-heading); margin: var(--ssf-space-64) auto 0; }
+@media (min-width: 1280px) {
+  .ssf-chiusura { text-align: center; }
+  .ssf-chiusura .ssf-intestazione, .ssf-chiusura .ssf-azioni, .ssf-chiusura > .ssf-container > .ph-testo { margin-inline: auto; justify-content: center; }
+}
+.ssf-tagline { font-family: var(--ssf-font-display); text-transform: uppercase; letter-spacing: .06em;
+  font-size: var(--ssf-fs-h3); line-height: var(--ssf-lh-h3); color: var(--ssf-text-heading);
+  margin: var(--ssf-space-64) 0 0; text-wrap: balance; }
 
 .ssf-newsletter { display: grid; gap: var(--ssf-space-8); }
 @media (min-width: 1024px) { .ssf-newsletter__riga { display: flex; gap: var(--ssf-space-8); } }
@@ -372,7 +404,8 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
   .ssf-numeri__elenco > div + div { border-left: 1px solid var(--ssf-border-default); } }
 .ssf-numeri__elenco > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: var(--ssf-space-4); }
 .ssf-numeri__elenco dd { margin: 0; font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h2);
-  font-weight: var(--ssf-fw-semibold); line-height: 1; color: var(--ssf-text-accent); }   /* oro: utente, U12 */
+  font-weight: var(--ssf-fw-semibold); line-height: 1; color: var(--ssf-text-primary); }   /* argento: revisione del 27/09
+     (era oro, U12). L'oro resta a cio' che si clicca: [3.2] §7, «funzionerebbe anche in argento?» */
 .ssf-numeri__elenco dt { font-size: var(--ssf-fs-body-s); line-height: var(--ssf-lh-body-s);
   color: var(--ssf-text-secondary); }
 
@@ -383,35 +416,66 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-card > .ph { margin-bottom: var(--ssf-space-16); }
 .ssf-card .ssf-h4 { margin-top: 0; }
 
-/* Bottone WhatsApp flottante — decisione dell'utente, mappa §2 */
+/* Bottone WhatsApp flottante — decisione dell'utente, mappa §2.
+   Revisione del 27/09: cerchio scuro con il simbolo verde. Si riconosce dal simbolo, sta nella tavolozza,
+   vale 7,8:1 (il simbolo bianco sul verde pieno era 2,0:1) e non compete piu' con il bottone dorato:
+   per chi ha un daltonismo rosso-verde il verde pieno sembrava un secondo bottone d'oro.
+   Il verde resta l'unico colore fuori tavolozza: e' il marchio di WhatsApp. Nessuna ombra su fondo nero */
 .ssf-wa { position: fixed; right: var(--ssf-space-16); bottom: var(--ssf-space-16);
   z-index: var(--ssf-z-sticky); width: 56px; height: 56px; border-radius: var(--ssf-radius-full);
   display: inline-flex; align-items: center; justify-content: center;
-  background: #25D366; color: #FFFFFF;   /* verde WhatsApp: decisione dell'utente, 26/09 */
+  background: var(--ssf-bg-raised); color: #25D366;
   border: 0; cursor: pointer; padding: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .5); }
-.ssf-wa:hover { background: #1EBE5A; }
+  box-shadow: var(--ssf-ring-strong); }
+.ssf-wa:hover { background: var(--ssf-bg-overlay); }
 .ssf-wa svg { width: 26px; height: 26px; }
 @media (min-width: 1024px) { .ssf-wa { right: var(--ssf-space-32); bottom: var(--ssf-space-32); } }
 
 /* ---------- 5. Composizioni per variare il ritmo — richiesta dell'utente, 26/09 ----------
-   Nessuna animazione: la varieta' viene dalla forma delle sezioni, non dal movimento. */
+   Nessuna animazione: la varieta' viene dalla forma delle sezioni, non dal movimento.
+   Revisione del 27/09: ogni composizione ha un compito fisso, e si usa solo per quello.
+     banda :            apertura di pagina con una foto d'identita' (Corsi, Chi siamo)
+     dichiarazione :    la frase di una testimonianza, e nient'altro
+     asimmetrico :      un approfondimento con la sua foto (HEMA in Armis, l'agonismo)
+     affiancati :       testo e immagine accanto (il metodo in Home, i tornei, i contatti)
+     mosaico :          piu' foto che raccontano la stessa cosa (il metodo, il gruppo)
+     evidenza :         un elemento principale e due secondari dello stesso tipo (i corsi)
+     linea del tempo :  una storia per date
+     tabella :          i livelli di un corso, una volta sola
+     passi :            cosa succede, in ordine (come si comincia, dopo l'invio)
+     striscia info :    dati pratici brevi (quando e dove, i formati degli eventi)
+     listino :          i costi
+     titolo a sinistra : domande frequenti ed elenchi di eventi */
 
 /* Banda: foto a tutta larghezza con il testo sopra (le «aperture di sezione» di [3.6]) */
-.ssf-banda { position: relative; overflow: clip; min-height: 30rem; display: flex; align-items: flex-end;
-  background: var(--ssf-bg-steel); }
-.ssf-banda > .ssf-container { padding-block: var(--ssf-space-96) var(--ssf-space-48); }
-.ssf-banda__testo { max-width: 38rem; background: rgba(10, 10, 10, .72); padding: var(--ssf-space-24);
-}
+/* Revisione del 27/09. Solo in apertura di pagina: [3.6] §12 ammette il testo sopra la foto solo li'.
+   Sul telefono la foto sta sopra e il testo sotto, senza coprire le persone. Da 1024px il riquadro usa
+   il velo del sistema, --ssf-scrim-photo all'85%: era .72 scritto a mano, e su una foto chiara il testo
+   secondario scendeva a 3,7:1 */
+.ssf-banda { position: relative; overflow: clip; background: var(--ssf-bg-steel); }
+.ssf-banda > .ssf-hero__foto { position: relative; inset: auto; aspect-ratio: 3 / 2; height: auto; }
+.ssf-banda > .ssf-container { padding-block: var(--ssf-space-32) var(--ssf-space-48); }
 .ssf-banda__testo > :last-child { margin-bottom: 0; }
-@media (min-width: 1024px) { .ssf-banda { min-height: 36rem; } .ssf-banda__testo { padding: var(--ssf-space-32); } }
+@media (min-width: 1024px) {
+  .ssf-banda { min-height: 36rem; display: flex; align-items: flex-end; }
+  .ssf-banda > .ssf-hero__foto { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; }
+  .ssf-banda > .ssf-container { padding-block: var(--ssf-space-96) var(--ssf-space-48); }
+  .ssf-banda__testo { max-width: 38rem; background: var(--ssf-scrim-photo); padding: var(--ssf-space-32); }
+}
 
-/* Dichiarazione: una frase grande, centrata, fra due divisori */
-.ssf-dichiarazione { text-align: center; max-width: 52rem; margin-inline: auto; }
-.ssf-dichiarazione__frase { font-family: var(--ssf-font-display); text-transform: uppercase;
-  font-size: var(--ssf-fs-h2); line-height: var(--ssf-lh-h2); letter-spacing: .04em;
-  color: var(--ssf-text-heading); margin: 0 0 var(--ssf-space-16); text-wrap: balance; }
-.ssf-dichiarazione .ph-testo, .ssf-dichiarazione .ph-righe { margin-inline: auto; }
+/* Dichiarazione: la frase grande di una testimonianza, e solo quella. Revisione del 27/09: in IBM Plex
+   Sans, perche' e' la voce di una persona (in Cinzel era un blocco di maiuscole, e [3.3] §9.4 vieta
+   Cinzel per il testo corrente). Allineata a sinistra, centrata solo da 1280px */
+.ssf-dichiarazione { max-width: 52rem; }
+.ssf-dichiarazione__frase { font-family: var(--ssf-font-text); font-size: var(--ssf-fs-h4);
+  font-weight: var(--ssf-fw-medium); line-height: var(--ssf-lh-lead); color: var(--ssf-text-heading);
+  margin: 0 0 var(--ssf-space-12); text-wrap: pretty; }
+@media (min-width: 1024px) { .ssf-dichiarazione__frase { font-size: var(--ssf-fs-h3); line-height: 1.4; } }
+@media (min-width: 1280px) {
+  .ssf-dichiarazione { text-align: center; margin-inline: auto; }
+  .ssf-dichiarazione .ssf-occhiello { justify-content: center; }
+  .ssf-dichiarazione .ph-testo, .ssf-dichiarazione .ph-righe { margin-inline: auto; }
+}
 
 /* Asimmetrico: foto grande e riquadro di testo che la sormonta */
 .ssf-asimmetrico { display: grid; }
@@ -428,13 +492,14 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 /* Linea del tempo: verticale sul telefono, orizzontale su desktop */
 .ssf-tappe { list-style: none; padding: 0; margin: var(--ssf-space-40) 0 0; display: grid; gap: var(--ssf-space-24); }
 .ssf-tappe li { position: relative; padding-left: var(--ssf-space-32); }
-.ssf-tappe li::before { content: ""; position: absolute; left: 0; top: .35em; width: 12px; height: 12px;
+/* Il pallino sta a meta' della prima riga dell'anno, che dal 27/09 e' a 28px */
+.ssf-tappe li::before { content: ""; position: absolute; left: 0; top: calc(var(--ssf-fs-h3) * var(--ssf-lh-h3) / 2 - 6px); width: 12px; height: 12px;
   border-radius: 50%; background: var(--ssf-text-heading); }
-.ssf-tappe li::after { content: ""; position: absolute; left: 5px; top: 1.3em; bottom: calc(-1 * var(--ssf-space-24));
+.ssf-tappe li::after { content: ""; position: absolute; left: 5px; top: calc(var(--ssf-fs-h3) * var(--ssf-lh-h3) / 2 + 8px); bottom: calc(-1 * var(--ssf-space-24));
   width: 2px; background: var(--ssf-border-default); }
 .ssf-tappe li:last-child::after { display: none; }
-.ssf-tappe strong { display: block; font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h4);
-  color: var(--ssf-text-heading); font-weight: var(--ssf-fw-medium); }
+.ssf-tappe strong { display: block; font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h3);
+  line-height: var(--ssf-lh-h3); color: var(--ssf-text-heading); font-weight: var(--ssf-fw-medium); }
 @media (min-width: 1024px) {
   .ssf-tappe { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--ssf-gutter); }
   .ssf-tappe li { padding: var(--ssf-space-32) 0 0; }
@@ -450,21 +515,13 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
   .ssf-mosaico { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; }
   .ssf-mosaico > :first-child { grid-column: 1; grid-row: 1 / 3; height: 100%; aspect-ratio: auto; }
 }
+/* Mosaico accanto al testo (Home, empatia e metodo, revisione del 27/09): colonne quasi pari,
+   cosi' la tavola resta verticale come la pagina del trattato */
+.ssf-affiancati > .ssf-mosaico { margin-top: 0; }
+@media (min-width: 1024px) { .ssf-affiancati > .ssf-mosaico { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); } }
 
-/* Percorso a tappe: i quattro livelli come un sentiero */
-.ssf-percorso { list-style: none; padding: 0; margin: var(--ssf-space-40) 0 0; display: grid; gap: var(--ssf-space-16);
-  counter-reset: livello; }
-.ssf-percorso li { counter-increment: livello; border: var(--ssf-border-width) solid var(--ssf-border-default);
-  padding: var(--ssf-space-24); position: relative; }
-.ssf-percorso li::before { content: counter(livello, upper-roman); display: block; font-family: var(--ssf-font-display);
-  font-size: var(--ssf-fs-h2); line-height: 1; color: var(--ssf-text-heading); margin-bottom: var(--ssf-space-12); }
-.ssf-percorso strong { display: block; font-weight: var(--ssf-fw-semibold); color: var(--ssf-text-heading); margin-bottom: var(--ssf-space-4); }
-@media (min-width: 1024px) {
-  .ssf-percorso { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
-  .ssf-percorso li + li { border-left: 0; }
-  .ssf-percorso li:nth-child(2) { margin-top: var(--ssf-space-24); } .ssf-percorso li:nth-child(3) { margin-top: var(--ssf-space-48); }
-  .ssf-percorso li:nth-child(4) { margin-top: var(--ssf-space-64); }
-}
+/* Percorso a tappe: tolto con la revisione del 27/09 (R4). I livelli si mostrano una volta sola,
+   con la tabella, che dice di piu' e sul telefono si scompone in blocchi */
 
 /* Ritratti senza card */
 .ssf-profili { display: grid; gap: var(--ssf-space-32) var(--ssf-gutter); margin-top: var(--ssf-space-32);
@@ -475,6 +532,11 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 
 /* In evidenza: un elemento grande e due piccoli */
 .ssf-evidenza { display: grid; gap: var(--ssf-gutter); margin-top: var(--ssf-space-32); }
+/* Revisione del 27/09: nelle card secondarie la foto riempie l'altezza, niente mezza card vuota */
+@media (min-width: 1024px) {
+  .ssf-evidenza > .ssf-card--orizzontale { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); align-items: stretch; }
+  .ssf-evidenza > .ssf-card--orizzontale > .ph { aspect-ratio: auto; height: 100%; min-height: 9rem; }
+}
 @media (min-width: 1024px) {
   .ssf-evidenza { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); grid-template-rows: auto auto; }
   .ssf-evidenza > :first-child { grid-row: 1 / 3; }
@@ -497,8 +559,8 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 @media (min-width: 1024px) { .ssf-colonne { columns: 2; } }
 .ssf-colonne .ph-righe { break-inside: avoid; }
 
-/* Listino centrato */
-.ssf-listino { max-width: 40rem; margin-inline: auto; }
+/* Listino: i costi. Allineato a sinistra dalla revisione del 27/09, come i titoli */
+.ssf-listino { max-width: 40rem; }
 .ssf-listino .ssf-importi { max-width: none; }
 
 .ssf-centro { text-align: center; }
