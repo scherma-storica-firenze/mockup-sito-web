@@ -519,3 +519,23 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-card--orizzontale { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--ssf-space-16);
   align-items: start; }
 .ssf-card.ssf-card--orizzontale > .ph { margin-bottom: 0; }
+
+/* Tabella dei livelli (Corsi) — richiesta dell'utente, 27/09. Sul telefono ogni riga diventa un blocco */
+.ssf-tabella { width: 100%; border-collapse: collapse; margin-top: var(--ssf-space-32); }
+.ssf-tabella th, .ssf-tabella td { text-align: left; vertical-align: top; padding: var(--ssf-space-16);
+  border-bottom: var(--ssf-border-width) solid var(--ssf-border-default); }
+.ssf-tabella thead th { font-size: var(--ssf-fs-body-s); font-weight: var(--ssf-fw-medium);
+  color: var(--ssf-text-secondary); border-bottom-color: var(--ssf-border-strong); }
+.ssf-tabella tbody th { font-family: var(--ssf-font-display); font-size: var(--ssf-fs-h3); line-height: 1;
+  font-weight: var(--ssf-fw-medium); color: var(--ssf-text-heading); width: 6rem; }
+.ssf-tabella td .ph-testo { margin: 0; }
+@media (max-width: 767px) {
+  .ssf-tabella thead { display: none; }
+  .ssf-tabella tr { display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: var(--ssf-space-16);
+    padding-block: var(--ssf-space-16); border-bottom: var(--ssf-border-width) solid var(--ssf-border-default); }
+  .ssf-tabella th, .ssf-tabella td { border: 0; padding: 0; }
+  .ssf-tabella tbody th { grid-row: span 3; width: auto; }
+  .ssf-tabella td { grid-column: 2; margin-bottom: var(--ssf-space-8); }
+  .ssf-tabella td::before { content: attr(data-etichetta); display: block; font-size: var(--ssf-fs-caption);
+    color: var(--ssf-text-secondary); }
+}
