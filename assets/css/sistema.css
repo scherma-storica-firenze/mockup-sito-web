@@ -389,6 +389,9 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
 .ssf-tagline { font-family: var(--ssf-font-display); text-transform: uppercase; letter-spacing: .06em;
   font-size: var(--ssf-fs-h3); line-height: var(--ssf-lh-h3); color: var(--ssf-text-heading);
   margin: var(--ssf-space-64) 0 0; text-wrap: balance; }
+/* Firma: la tagline da sola, in fondo alla Home (27/09). [2.3] §5 la vuole solo in chiusura della pagina */
+.ssf-section.ssf-firma { padding-block: var(--ssf-space-48); }
+.ssf-firma .ssf-tagline { margin-top: 0; }
 
 .ssf-newsletter { display: grid; gap: var(--ssf-space-8); }
 @media (min-width: 1024px) { .ssf-newsletter__riga { display: flex; gap: var(--ssf-space-8); } }
