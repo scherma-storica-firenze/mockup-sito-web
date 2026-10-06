@@ -244,19 +244,26 @@ a.ssf-event .ssf-event__titolo { color: var(--ssf-text-accent); }
   .ssf-nav > .ssf-btn { margin-inline-start: 0; }
 }
 /* 06/10: sottovoci (Istruttori sotto Chi siamo). Sul telefono stanno rientrate sotto la voce madre;
-   da 1024px si aprono a tendina al passaggio del mouse o al fuoco da tastiera, senza JavaScript */
+   da 1024px si aprono a tendina al passaggio del mouse o al fuoco da tastiera, senza JavaScript.
+   Seconda versione, su richiesta dell'utente: tendina allineata al testo della voce, larga quanto le
+   voci, la voce madre ripetuta in cima, la pagina corrente in oro senza sottolineatura */
 .ssf-nav__gruppo { display: grid; gap: var(--ssf-space-4); }
 .ssf-nav__sotto { display: grid; padding-inline-start: var(--ssf-space-16); }
 .ssf-nav__voce--figlia { font-weight: var(--ssf-fw-regular); color: var(--ssf-text-secondary); }
+.ssf-nav__voce--ripetuta { display: none; }
 .ssf-nav__voce--madre { color: var(--ssf-text-heading); }
 @media (min-width: 1024px) {
-  .ssf-nav__gruppo { position: relative; display: flex; align-items: center; }
+  .ssf-nav__gruppo { position: relative; display: flex; align-items: center; height: 100%; }
   .ssf-nav__gruppo > .ssf-nav__voce:first-child::after { content: ""; width: .4em; height: .4em; margin-inline-start: .45em;
     border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-.15em) rotate(45deg); }
   .ssf-nav__sotto { display: none; position: absolute; top: 100%; left: calc(-1 * var(--ssf-space-16));
-    min-width: 12rem; padding: var(--ssf-space-8) var(--ssf-space-16);
-    background: var(--ssf-bg-raised); box-shadow: var(--ssf-ring-hairline); }
+    width: max-content; padding: var(--ssf-space-8) 0;
+    background: var(--ssf-bg-base); border: var(--ssf-border-width) solid var(--ssf-border-default); border-top: 0; }
   .ssf-nav__gruppo:hover > .ssf-nav__sotto, .ssf-nav__gruppo:focus-within > .ssf-nav__sotto { display: grid; }
+  .ssf-nav__sotto .ssf-nav__voce { min-height: 40px; padding-inline: var(--ssf-space-16) var(--ssf-space-32); }
+  .ssf-nav__sotto .ssf-nav__voce--ripetuta { display: inline-flex; }
+  .ssf-nav__sotto .ssf-nav__voce:hover { color: var(--ssf-text-accent); background: var(--ssf-bg-raised); }
+  .ssf-nav__sotto .ssf-nav__voce[aria-current="page"] { box-shadow: none; color: var(--ssf-text-accent); }
   .ssf-nav__voce--madre { box-shadow: inset 0 -2px 0 var(--ssf-border-accent); }
 }
 /* L'etichetta lunga non sta accanto a sette voci a 1024px: misurato in costruzione */

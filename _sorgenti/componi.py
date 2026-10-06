@@ -25,13 +25,15 @@ SITO = QUI.parent
 ICONE = SITO / "assets" / "icons"
 
 # Revisione del 27/09: «Corsi e costi», perche' i costi si trovino dal menu; Sponsor scende nel piede.
-# 06/10: «Sedi» (Firenze e Livorno) e, sotto «Chi siamo», la sottovoce «Istruttori»
+# 06/10: «Sedi» (Firenze e Livorno) accanto a «Contatti» e, sotto «Chi siamo», la sottovoce «Istruttori».
+# Nella tendina la voce madre si ripete in cima (solo da 1024px: sul telefono e' gia' sopra)
 VOCI = [("corsi.html", "Corsi e costi", "corsi", []),
-        ("sedi.html", "Sedi", "sedi", []),
-        ("chi-siamo.html", "Chi siamo", "chi-siamo", [("istruttori.html", "Istruttori", "istruttori")]),
+        ("chi-siamo.html", "Chi siamo", "chi-siamo", [("chi-siamo.html", "Chi siamo", "chi-siamo"),
+                                                       ("istruttori.html", "Istruttori", "istruttori")]),
         ("eventi.html", "Eventi", "eventi", []),
         ("foto-e-video.html", "Foto e video", "foto-e-video", []),
         ("blog.html", "Blog", "blog", []),
+        ("sedi.html", "Sedi", "sedi", []),
         ("contatti.html", "Contatti", "contatti", [])]
 
 TIPI = {"foto": ("FOTO", "foto"), "video": ("VIDEO", "video"), "mappa": ("MAPPA", "mappa"),
@@ -102,7 +104,8 @@ def voci(attiva):
             righe_html.append("    " + voce(href, nome, chiave, attiva))
             continue
         madre = "ssf-nav__voce" + (" ssf-nav__voce--madre" if attiva in [f[2] for f in figlie] else "")
-        sotto = "".join(voce(h, n, c, attiva, "ssf-nav__voce ssf-nav__voce--figlia") for h, n, c in figlie)
+        sotto = "".join(voce(h, n, c, attiva, "ssf-nav__voce ssf-nav__voce--figlia"
+                             + (" ssf-nav__voce--ripetuta" if h == href else "")) for h, n, c in figlie)
         righe_html.append('    <div class="ssf-nav__gruppo">%s<div class="ssf-nav__sotto">%s</div></div>'
                           % (voce(href, nome, chiave, attiva, madre), sotto))
     return "\n".join(righe_html)
