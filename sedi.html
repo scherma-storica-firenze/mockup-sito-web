@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Mockup · Contatti · Scherma Storica Firenze</title>
+<title>Mockup · Sedi · Scherma Storica Firenze</title>
 <link rel="icon" href="assets/img/favicon.ico" sizes="any">
 <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
@@ -24,104 +24,126 @@
   <a class="ssf-nav__logo" href="index.html"><img src="assets/img/logo-ssf.png" alt="Scherma Storica Firenze, torna alla home" width="105" height="36"></a>
   <div class="ssf-nav__voci">
     <a class="ssf-nav__voce" href="corsi.html">Corsi e costi</a>
-    <a class="ssf-nav__voce" href="sedi.html">Sedi</a>
+    <a class="ssf-nav__voce" href="sedi.html" aria-current="page">Sedi</a>
     <div class="ssf-nav__gruppo"><a class="ssf-nav__voce" href="chi-siamo.html">Chi siamo</a><div class="ssf-nav__sotto"><a class="ssf-nav__voce ssf-nav__voce--figlia" href="istruttori.html">Istruttori</a></div></div>
     <a class="ssf-nav__voce" href="eventi.html">Eventi</a>
     <a class="ssf-nav__voce" href="foto-e-video.html">Foto e video</a>
     <a class="ssf-nav__voce" href="blog.html">Blog</a>
-    <a class="ssf-nav__voce" href="contatti.html" aria-current="page">Contatti</a>
+    <a class="ssf-nav__voce" href="contatti.html">Contatti</a>
   </div>
   <details class="ssf-nav__menu">
     <summary aria-label="Apri il menu"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
     <div>
     <a class="ssf-nav__voce" href="corsi.html">Corsi e costi</a>
-    <a class="ssf-nav__voce" href="sedi.html">Sedi</a>
+    <a class="ssf-nav__voce" href="sedi.html" aria-current="page">Sedi</a>
     <div class="ssf-nav__gruppo"><a class="ssf-nav__voce" href="chi-siamo.html">Chi siamo</a><div class="ssf-nav__sotto"><a class="ssf-nav__voce ssf-nav__voce--figlia" href="istruttori.html">Istruttori</a></div></div>
     <a class="ssf-nav__voce" href="eventi.html">Eventi</a>
     <a class="ssf-nav__voce" href="foto-e-video.html">Foto e video</a>
     <a class="ssf-nav__voce" href="blog.html">Blog</a>
-    <a class="ssf-nav__voce" href="contatti.html" aria-current="page">Contatti</a>
+    <a class="ssf-nav__voce" href="contatti.html">Contatti</a>
     </div>
   </details>
   <a class="ssf-btn ssf-btn--primary" href="contatti.html"><span class="solo-stretto">Prenota</span><span class="solo-largo">Prenota i tre allenamenti gratuiti</span></a>
 </nav>
 
 <main>
-<!-- Mappa §3.3 · la pagina d'arrivo di ogni CTA: il modulo è il primo elemento -->
-<section class="ssf-section ssf-section--steel" style="padding-top:var(--ssf-space-32)">
+<!-- 06/10, richiesta dell'utente: una pagina per le sedi, Firenze e Livorno, con tutte le informazioni.
+     Firenze: indirizzo dal brief [0.1]; il resto segnaposto. Livorno: tutto segnaposto per ora -->
+
+<!-- 1 · BANDA: apertura a tutta larghezza -->
+<section class="ssf-banda">
+  <figure class="ph ssf-hero__foto ph--16x9"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 20"/></svg><figcaption><strong>FOTO</strong> · apertura di sezione · la palestra la sera, luci accese, qualcuno che si allena · 16:9</figcaption></figure>
+  <div class="ssf-container">
+    <div class="ssf-banda__testo">
+      <h1 class="ssf-h1">[Titolo — dove ci alleniamo]</h1>
+      <p class="ph-testo">[Sottotitolo — due sedi, Firenze e Livorno: scegli la più vicina]</p>
+      <div class="ssf-azioni">
+        <a class="ssf-btn ssf-btn--secondary" href="#firenze">Firenze</a>
+        <a class="ssf-btn ssf-btn--secondary" href="#livorno">Livorno</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · FIRENZE — scheda completa: dati a sinistra, mappa e foto a destra -->
+<section class="ssf-section" id="firenze">
   <div class="ssf-container ssf-affiancati" style="align-items:start">
     <div>
-      <h1 class="ssf-h2" style="margin-top:0">[Titolo — chiedi il primo dei tre allenamenti, o scrivici]</h1>
-      <p class="ph-testo">[Ti rispondiamo entro 24 ore]</p>
-    </div>
-    <form action="grazie.html" method="get">
-      <div class="ssf-msg ssf-msg--info"><span>Nel mockup il modulo non invia: il bottone porta alla pagina di conferma.</span></div>
-      <div class="ssf-field"><label for="nome">Nome</label><input class="ssf-input" id="nome" name="nome" autocomplete="name"></div>
-      <div class="ssf-field"><label for="email">Email</label><input class="ssf-input" id="email" name="email" type="email" autocomplete="email"></div>
-      <div class="ssf-field"><label for="canale">Come ci hai conosciuti? (facoltativo)</label>
-        <select class="ssf-select" id="canale" name="canale">
-          <option value="">Scegli</option><option>Ricerca su Google</option><option>Instagram</option>
-          <option>YouTube</option><option>Un amico o un socio</option><option>Un evento</option><option>Altro</option>
-        </select></div>
-      <div class="ssf-field"><label for="messaggio">Messaggio</label>
-        <textarea class="ssf-textarea" id="messaggio" name="messaggio" placeholder="[Suggerimento — quali sere preferisci, o cosa vuoi chiederci]"></textarea></div>
-      <label class="ssf-check"><input type="checkbox" name="consenso"><span>Ho letto l'<a class="ph-finto" title="Documento esterno: nel mockup non si apre">informativa privacy</a></span></label>
-      <div class="ssf-azioni" style="margin-top:var(--ssf-space-16)">
-        <button class="ssf-btn ssf-btn--primary" type="submit">Prenota il primo dei tre allenamenti gratuiti</button>
+      <p class="ssf-occhiello">Sede di Firenze</p>
+      <h2 class="ssf-h2">[Titolo — la palestra di Via Pistoiese]</h2>
+      <p class="ph-testo">[Due righe — la sede storica dell'associazione: palestra fissa con il magazzino dell'attrezzatura]</p>
+      <dl class="ssf-dati">
+        <div><dt>Indirizzo</dt><dd>Via Pistoiese 159, Firenze</dd></div>
+        <div><dt>Sere di allenamento</dt><dd><p class="ph-testo">[Giorni · dalle 21 alle 23]</p></dd></div>
+        <div><dt>Corsi in questa sede</dt><dd><p class="ph-testo">[Spada a due mani · altri corsi]</p></dd></div>
+        <div><dt>Istruttori</dt><dd><p class="ph-testo">[Nomi degli istruttori della sede]</p></dd></div>
+        <div><dt>Con i mezzi</dt><dd><p class="ph-testo">[Autobus e fermata più vicina]</p></dd></div>
+        <div><dt>In auto</dt><dd><p class="ph-testo">[Parcheggio]</p></dd></div>
+        <div><dt>Cosa trovi</dt><dd><p class="ph-testo">[Spogliatoi · docce · attrezzatura in prestito per chi comincia]</p></dd></div>
+        <div><dt>Referente</dt><dd><p class="ph-testo">[Nome · WhatsApp]</p></dd></div>
+      </dl>
+      <div class="ssf-azioni ssf-azioni--sopra">
+        <a class="ssf-btn ssf-btn--primary" href="contatti.html">Prenota a Firenze i tre allenamenti gratuiti</a>
       </div>
-    </form>
-  </div>
-</section>
-
-<!-- 3 · Cosa succede dopo, e la garanzia sul primo passo — vicino al modulo -->
-<section class="ssf-section ssf-section--paper">
-  <svg class="ssf-filigrana" viewBox="0 0 524 549.4" aria-hidden="true" focusable="false"><use href="#giglio"/></svg>
-  <div class="ssf-container ssf-affiancati">
-    <div>
-      <h2 class="ssf-h2">[Titolo — cosa succede dopo]</h2>
-      <ol class="ssf-passi" style="grid-template-columns:1fr">
-        <li><p class="ph-testo">[Ti rispondiamo entro 24 ore]</p></li>
-        <li><p class="ph-testo">[Ci accordiamo sulla sera]</p></li>
-        <li><p class="ph-testo">[Vieni con abiti comodi: al resto pensiamo noi]</p></li>
-        <li><p class="ph-testo">[Dopo tre allenamenti decidi tu]</p></li>
-      </ol>
-      <div class="ssf-cornice" style="margin-top:var(--ssf-space-32)"><div>
-        <p class="ssf-cornice__titolo">[Garanzia sul primo passo]</p>
-        <p class="ph-testo">[I tre allenamenti sono gratuiti e non ti impegnano a niente]</p>
-      </div></div>
-    </div>
-    <figure class="ph ph--4x5"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 20"/></svg><figcaption><strong>FOTO</strong> · Immagine 2 di [3.6] · qualcuno alla prima sera, accanto all'istruttore · volto scoperto · palestra · 4:5</figcaption></figure>
-  </div>
-</section>
-
-<!-- 4 · Gli altri modi per scriverci -->
-<section class="ssf-section">
-  <div class="ssf-container">
-    <div class="ssf-intestazione">
-      <h2 class="ssf-h2">[Titolo — altri modi per scriverci]</h2>
-    </div>
-    <div class="ssf-griglia">
-      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">WhatsApp</h3><p class="ph-testo">[Numero · il bottone in basso a destra apre la chat]</p></div>
-      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">Email</h3><p class="ph-testo">[Indirizzo della casella dell'associazione]</p></div>
-      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">Telefono</h3><p class="ph-testo">[Numero, come testo]</p></div>
-      <div class="ssf-card"><h3 class="ssf-h5" style="margin-top:0">Social</h3><p class="ph-testo">[Instagram · Facebook · YouTube]</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 5 · Dove siamo — stessi dati della scheda Google Business Profile -->
-<section class="ssf-section ssf-section--alt" id="dove">
-  <div class="ssf-container ssf-affiancati">
-    <div>
-      <h2 class="ssf-h2">[Titolo — dove siamo]</h2>
-      <p>Firenze · Via Pistoiese 159</p>
-      <p class="ph-testo">[Livorno · indirizzo]</p>
-      <p class="ph-testo">[Sere di allenamento delle due sedi]</p>
-      <div class="ssf-azioni ssf-azioni--sopra"><a class="ssf-btn ssf-btn--secondary" href="sedi.html">Le sedi e come arrivare</a></div>
     </div>
     <div class="ssf-pila">
-      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><figcaption><strong>MAPPA</strong> · le due sedi, Firenze e Livorno · mappa di Google · 3:2</figcaption></figure>
-      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 20"/></svg><figcaption><strong>FOTO</strong> · Immagine 9 di [3.6] · la palestra la sera, luci accese · 3:2</figcaption></figure>
+      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><figcaption><strong>MAPPA</strong> · Via Pistoiese 159, Firenze · mappa di Google · 3:2</figcaption></figure>
+      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 20"/></svg><figcaption><strong>FOTO</strong> · la palestra di Firenze · l'ingresso, per riconoscerlo la prima sera · 3:2</figcaption></figure>
+      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 20"/></svg><figcaption><strong>FOTO</strong> · la palestra di Firenze · dentro, durante l'allenamento · 3:2</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · LIVORNO — stessa scheda, composizione invertita; tutti i dati sono segnaposto -->
+<section class="ssf-section ssf-section--alt" id="livorno">
+  <div class="ssf-container ssf-affiancati ssf-affiancati--inverso" style="align-items:start">
+    <div>
+      <p class="ssf-occhiello">Sede di Livorno</p>
+      <h2 class="ssf-h2">[Titolo — la sede di Livorno]</h2>
+      <p class="ph-testo">[Due righe — da quando ci alleniamo a Livorno e chi la segue]</p>
+      <dl class="ssf-dati">
+        <div><dt>Indirizzo</dt><dd><p class="ph-testo">[Via e numero, Livorno]</p></dd></div>
+        <div><dt>Sere di allenamento</dt><dd><p class="ph-testo">[Giorni · orari]</p></dd></div>
+        <div><dt>Corsi in questa sede</dt><dd><p class="ph-testo">[Corsi]</p></dd></div>
+        <div><dt>Istruttori</dt><dd><p class="ph-testo">[Nomi degli istruttori della sede]</p></dd></div>
+        <div><dt>Con i mezzi</dt><dd><p class="ph-testo">[Autobus e fermata più vicina]</p></dd></div>
+        <div><dt>In auto</dt><dd><p class="ph-testo">[Parcheggio]</p></dd></div>
+        <div><dt>Cosa trovi</dt><dd><p class="ph-testo">[Spogliatoi · docce · attrezzatura]</p></dd></div>
+        <div><dt>Referente</dt><dd><p class="ph-testo">[Nome · WhatsApp]</p></dd></div>
+      </dl>
+      <div class="ssf-azioni ssf-azioni--sopra">
+        <a class="ssf-btn ssf-btn--secondary" href="contatti.html">Prenota a Livorno i tre allenamenti gratuiti</a>
+      </div>
+    </div>
+    <div class="ssf-pila">
+      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><figcaption><strong>MAPPA</strong> · la sede di Livorno · mappa di Google · 3:2</figcaption></figure>
+      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 20"/></svg><figcaption><strong>FOTO</strong> · la palestra di Livorno · l'ingresso · 3:2</figcaption></figure>
+      <figure class="ph ph--3x2"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 20"/></svg><figcaption><strong>FOTO</strong> · la palestra di Livorno · dentro, durante l'allenamento · 3:2</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · Domande sulle sedi -->
+<section class="ssf-section">
+  <div class="ssf-container ssf-faq-doppia">
+    <div>
+      <h2 class="ssf-h2">[Titolo — domande sulle sedi]</h2>
+    </div>
+    <div class="ssf-faq">
+      <details open><summary>[Domanda — posso allenarmi in tutte e due le sedi?]</summary><div><p class="ph-testo">[Risposta]</p><div class="ph-righe" aria-hidden="true"><span></span><span></span></div></div></details>
+      <details><summary>[Domanda — la quota è la stessa a Firenze e a Livorno?]</summary><div><p class="ph-testo">[Risposta]</p><div class="ph-righe" aria-hidden="true"><span></span><span></span></div></div></details>
+      <details><summary>[Domanda — i tre allenamenti gratuiti valgono in entrambe le sedi?]</summary><div><p class="ph-testo">[Risposta]</p><div class="ph-righe" aria-hidden="true"><span></span><span></span></div></div></details>
+      <details><summary>[Domanda — cosa porto la prima sera?]</summary><div><p class="ph-testo">[Risposta — abiti comodi: al resto pensiamo noi]</p><div class="ph-righe" aria-hidden="true"><span></span><span></span></div></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · Chiusura -->
+<section class="ssf-section ssf-section--steel ssf-chiusura">
+  <div class="ssf-container">
+    <h2 class="ssf-h2" style="margin-top:0">[Titolo — scegli la sede più vicina e vieni a provare]</h2>
+    <div class="ssf-azioni" style="margin-top:var(--ssf-space-32)">
+      <a class="ssf-btn ssf-btn--primary" href="contatti.html">Prenota il primo dei tre allenamenti gratuiti</a>
     </div>
   </div>
 </section>

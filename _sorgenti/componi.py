@@ -24,13 +24,15 @@ QUI = Path(__file__).resolve().parent
 SITO = QUI.parent
 ICONE = SITO / "assets" / "icons"
 
-# Revisione del 27/09: «Corsi e costi», perche' i costi si trovino dal menu; Sponsor scende nel piede
-VOCI = [("corsi.html", "Corsi e costi", "corsi"),
-        ("chi-siamo.html", "Chi siamo", "chi-siamo"),
-        ("eventi.html", "Eventi", "eventi"),
-        ("foto-e-video.html", "Foto e video", "foto-e-video"),
-        ("blog.html", "Blog", "blog"),
-        ("contatti.html", "Contatti", "contatti")]
+# Revisione del 27/09: «Corsi e costi», perche' i costi si trovino dal menu; Sponsor scende nel piede.
+# 06/10: «Sedi» (Firenze e Livorno) e, sotto «Chi siamo», la sottovoce «Istruttori»
+VOCI = [("corsi.html", "Corsi e costi", "corsi", []),
+        ("sedi.html", "Sedi", "sedi", []),
+        ("chi-siamo.html", "Chi siamo", "chi-siamo", [("istruttori.html", "Istruttori", "istruttori")]),
+        ("eventi.html", "Eventi", "eventi", []),
+        ("foto-e-video.html", "Foto e video", "foto-e-video", []),
+        ("blog.html", "Blog", "blog", []),
+        ("contatti.html", "Contatti", "contatti", [])]
 
 TIPI = {"foto": ("FOTO", "foto"), "video": ("VIDEO", "video"), "mappa": ("MAPPA", "mappa"),
         "recensioni": ("RECENSIONI GOOGLE", "stella"),
@@ -86,11 +88,23 @@ def giglio_symbol():
     return '<symbol id="giglio" viewBox="0 0 524.0 549.4">' + corpo + "</symbol>"
 
 
+def voce(href, nome, chiave, attiva, classe="ssf-nav__voce"):
+    corrente = ' aria-current="page"' if chiave == attiva else ""
+    return '<a class="%s" href="%s"%s>%s</a>' % (classe, href, corrente, nome)
+
+
 def voci(attiva):
+    """Le voci con sottovoci diventano un gruppo: sul telefono la sottovoce sta rientrata
+    sotto la voce madre, da 1024px si apre a tendina al passaggio o al fuoco."""
     righe_html = []
-    for href, nome, chiave in VOCI:
-        corrente = ' aria-current="page"' if chiave == attiva else ""
-        righe_html.append('    <a class="ssf-nav__voce" href="%s"%s>%s</a>' % (href, corrente, nome))
+    for href, nome, chiave, figlie in VOCI:
+        if not figlie:
+            righe_html.append("    " + voce(href, nome, chiave, attiva))
+            continue
+        madre = "ssf-nav__voce" + (" ssf-nav__voce--madre" if attiva in [f[2] for f in figlie] else "")
+        sotto = "".join(voce(h, n, c, attiva, "ssf-nav__voce ssf-nav__voce--figlia") for h, n, c in figlie)
+        righe_html.append('    <div class="ssf-nav__gruppo">%s<div class="ssf-nav__sotto">%s</div></div>'
+                          % (voce(href, nome, chiave, attiva, madre), sotto))
     return "\n".join(righe_html)
 
 

@@ -243,6 +243,22 @@ a.ssf-event .ssf-event__titolo { color: var(--ssf-text-accent); }
   .ssf-nav__logo img { height: 48px; }
   .ssf-nav > .ssf-btn { margin-inline-start: 0; }
 }
+/* 06/10: sottovoci (Istruttori sotto Chi siamo). Sul telefono stanno rientrate sotto la voce madre;
+   da 1024px si aprono a tendina al passaggio del mouse o al fuoco da tastiera, senza JavaScript */
+.ssf-nav__gruppo { display: grid; gap: var(--ssf-space-4); }
+.ssf-nav__sotto { display: grid; padding-inline-start: var(--ssf-space-16); }
+.ssf-nav__voce--figlia { font-weight: var(--ssf-fw-regular); color: var(--ssf-text-secondary); }
+.ssf-nav__voce--madre { color: var(--ssf-text-heading); }
+@media (min-width: 1024px) {
+  .ssf-nav__gruppo { position: relative; display: flex; align-items: center; }
+  .ssf-nav__gruppo > .ssf-nav__voce:first-child::after { content: ""; width: .4em; height: .4em; margin-inline-start: .45em;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-.15em) rotate(45deg); }
+  .ssf-nav__sotto { display: none; position: absolute; top: 100%; left: calc(-1 * var(--ssf-space-16));
+    min-width: 12rem; padding: var(--ssf-space-8) var(--ssf-space-16);
+    background: var(--ssf-bg-raised); box-shadow: var(--ssf-ring-hairline); }
+  .ssf-nav__gruppo:hover > .ssf-nav__sotto, .ssf-nav__gruppo:focus-within > .ssf-nav__sotto { display: grid; }
+  .ssf-nav__voce--madre { box-shadow: inset 0 -2px 0 var(--ssf-border-accent); }
+}
 /* L'etichetta lunga non sta accanto a sette voci a 1024px: misurato in costruzione */
 @media (min-width: 1280px) { .solo-largo { display: inline; } .solo-stretto { display: none; } }
 
@@ -352,7 +368,7 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
                grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .ssf-griglia--fitta { grid-template-columns: repeat(auto-fill, minmax(min(100%, 9rem), 1fr)); }
 
-.ssf-affiancati { display: grid; gap: var(--ssf-space-32); align-items: center; }
+.ssf-affiancati { display: grid; gap: var(--ssf-space-32); align-items: center; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 1024px) {
   .ssf-affiancati { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--ssf-space-64); }
   .ssf-affiancati--inverso > :first-child { order: 2; }
@@ -604,3 +620,20 @@ a.ssf-event:hover { background: var(--ssf-bg-raised); }
   .ssf-tabella td::before { content: attr(data-etichetta); display: block; font-size: var(--ssf-fs-caption);
     color: var(--ssf-text-secondary); }
 }
+
+/* ---------- 7. Sedi e Istruttori, 06/10 ---------- */
+/* Scheda dati della sede: etichetta piccola sopra, valore sotto; da 640px su due colonne */
+.ssf-dati { display: grid; gap: var(--ssf-space-16); margin: var(--ssf-space-24) 0 0; }
+@media (min-width: 640px) { .ssf-dati { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ssf-dati dt { font-size: var(--ssf-fs-caption); font-weight: var(--ssf-fw-medium); letter-spacing: var(--ssf-ls-eyebrow);
+  text-transform: uppercase; color: var(--ssf-text-secondary); }
+.ssf-dati dd { margin: var(--ssf-space-4) 0 0; }
+.ssf-dati dd .ph-testo { margin: 0; }
+/* Istruttore: ritratto stretto accanto alla bio; sul telefono il ritratto sta sopra, a meta' larghezza */
+.ssf-istruttore { display: grid; gap: var(--ssf-space-24); align-items: start; }
+.ssf-istruttore > .ph { max-width: 14rem; }
+@media (min-width: 768px) { .ssf-istruttore { grid-template-columns: 16rem minmax(0, 1fr); gap: var(--ssf-space-48); }
+  .ssf-istruttore > .ph { max-width: none; } }
+.ssf-istruttore + .ssf-istruttore { margin-top: var(--ssf-space-48); padding-top: var(--ssf-space-48);
+  border-top: var(--ssf-border-width) solid var(--ssf-border-default); }
+.ssf-istruttore .ssf-h3 { margin: 0 0 var(--ssf-space-4); }
